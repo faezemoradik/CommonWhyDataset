@@ -6,7 +6,7 @@ This repository contains the resources for the paper submitted to SIGIR 2026:
 
 # Introduction
 
-This repository provides the CommonWhy dataset and implementations of the baseline methods. \textsc{CommonWhy} consists of 15,000 *why* questions with ground-truth answers that explain the underlying cause of the event described in each question.
+This repository provides the CommonWhy dataset and implementations of the baseline methods. CommonWhy consists of 15,000 *why* questions with ground-truth answers that explain the underlying cause of the event described in each question.
 The dataset is designed to evaluate the capability of large language models (LLMs) in abductive, entity-based causal commonsense reasoning, as well as the commonsense reasoning ability of knowledge graph question answering (KGQA) methods.
 
 
