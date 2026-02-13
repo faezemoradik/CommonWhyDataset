@@ -12,7 +12,9 @@ The dataset is designed to evaluate the capability of large language models (LLM
 
 ## Data Downloading Instructions
 
-You can simply clone the repository or clicking on the [**dataset**](....) and clicking on the *Save Link As...* option. The dataset can be loaded and viewed by any conventional software tools for loading and viewing .json files, such as the VS Code, Sublime Text, Notepad++, etc.
+You can access the dataset by clicking on the [**dataset**](https://github.com/faezemoradik/CommonWhyDataset/blob/main/data_files/inference_rule_entities_with_grounded_qa.json) link and downloading the file.
+
+The dataset is provided in `.json` format and can be loaded and viewed using standard software tools that support JSON files, such as VS Code, Sublime Text, Notepad++, or any other compatible editor.
 
 In order to download the relevant KG subgarphs run Retrieve_rel_KG.py.
 
@@ -25,7 +27,7 @@ The dataset is divided into two subsets based on the popularity of the entities 
 - **Long-tail subset**: contains half of the queries involving less popular entities.  
 - **Head subset**: contains half of the queries involving more popular entities.  
 
-The distribution of these two subsets is illustrated in: (,...)
+The distribution of these two subsets is illustrated [**here**](https://github.com/faezemoradik/CommonWhyDataset/blob/main/data_statistics/popularity_split_histogram.pdf).
 
 
 
