@@ -1,0 +1,931 @@
+[
+    {
+        "rule": "If a person A died before 2002, then person A could not have attended El Último Tour Del Mundo.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement.\n      ?statement psv:P570 ?value.\n      ?value wikibase:timePrecision ?precision.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision >= 9)\n      ?value wikibase:timeValue ?death.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?death < \"+1999-06-25T00:00:00Z\"^^xsd:dateTime)\n        ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A was born after 27 June 1999, then person A could not have attended MJ & Friends.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement.\n      ?statement psv:P570 ?value.\n      ?value wikibase:timePrecision ?precision.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision >= 9)\n      ?value wikibase:timeValue ?death.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?death < \"+2002-06-25T00:00:00Z\"^^xsd:dateTime)\n        ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A was born after 2002, then person A could not have attended El Último Tour Del Mundo.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P569 ?statement_0.\n      ?statement_0 psv:P569 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P569_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P569_0 >= \"+2001-00-00T00:00:00Z\"^^xsd:dateTime)\n        ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A died before 2 December 1946, then person A could not have been a member of International Whaling Commission.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P569 ?statement_0.\n      ?statement_0 psv:P569 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P569_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P569_0 >= \"+2002-00-00T00:00:00Z\"^^xsd:dateTime)\n        ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A died before 1965, then person A could not have been a member of Inash Alusra.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement_0.\n      ?statement_0 psv:P570 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P570_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_0 < \"+1945-00-00T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A died before 2019, then person A could not have watched Ted Lasso.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement_0.\n      ?statement_0 psv:P570 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P570_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_0 < \"+1965-00-00T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A died before 2010, then person A could not have watched Yek Jahan Yek Jam.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement_0.\n      ?statement_0 psv:P570 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P570_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_0 < \"+2019-00-00T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A died before 1774, then person A could not have read The Sorrows of Young Werther.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement_0.\n      ?statement_0 psv:P570 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P570_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_0 < \"+2010-00-00T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A died before 1985, then person A could not have read Playing Murder.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement_0.\n      ?statement_0 psv:P570 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P570_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_0 < \"+1774-00-00T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A died before 1938, then person A could not have worked for Denizbank.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement_0.\n      ?statement_0 psv:P570 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P570_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_0 < \"+1985-00-00T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A died before 2019, then person A could not have worked for Senzoor.cz.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement_0.\n      ?statement_0 psv:P570 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P570_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_0 < \"+1938-00-00T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A died before 1996, then person A could not have listened to They Don't Care About Us.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement_0.\n      ?statement_0 psv:P570 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P570_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_0 < \"+2019-00-00T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A died before 1950, then person A could not have listened to Nasime vasl.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement_0.\n      ?statement_0 psv:P570 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P570_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_0 < \"+1996-00-00T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A died before 1955, then person A could not have been influenced by Upír Krejčí.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement_0.\n      ?statement_0 psv:P570 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P570_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_0 < \"+1950-00-00T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A died before 1955, then person A could not have been influenced by Mojtaba Pourbakhsh.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement_0.\n      ?statement_0 psv:P570 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P570_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_0 < \"+1955-00-00T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A died before 1800, then A could not have spoken to someone 100 miles away.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement_0.\n      ?statement_0 psv:P570 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P570_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_0 < \"+1955-00-00T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A died before 1800, then A could not have spoken to someone 100 miles away.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement_0.\n      ?statement_0 psv:P570 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P570_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_0 < \"+1800-00-00T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A died before 1905, then A could not have supported Arminia Bielefeld.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement_0.\n      ?statement_0 psv:P570 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P570_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_0 < \"+1800-00-00T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A died before 1970, then A could not have supported Aboomoslem F.C.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement_0.\n      ?statement_0 psv:P570 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P570_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_0 < \"+1905-00-00T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A died before 1899, then A could not have supported AC Milan.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement_0.\n      ?statement_0 psv:P570 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P570_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_0 < \"+1970-00-00T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A died before 1923, then A could not have supported Rīgas FK.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement_0.\n      ?statement_0 psv:P570 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P570_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_0 < \"+1899-00-00T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A died before 1934, then A could not have studied at University of Tehran.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement_0.\n      ?statement_0 psv:P570 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P570_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_0 < \"+1923-00-00T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A died before 1934, then A could not have studied at Farhangian University of Kazerun.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement_0.\n      ?statement_0 psv:P570 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P570_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_0 < \"+1934-00-00T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A died before 1859, then A could not have studied at Riga Technical University.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement_0.\n      ?statement_0 psv:P570 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P570_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_0 < \"+1934-00-00T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A died before 2000, then A could not have studied at Payame Noor University of Kazerun.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement_0.\n      ?statement_0 psv:P570 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P570_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_0 < \"+1859-00-00T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A died before 1965, then A could not have studied at Sharif University of Technology.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement_0.\n      ?statement_0 psv:P570 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P570_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_0 < \"+2000-00-00T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A died before 1993, then A could not have studied at Salman Farsi University of Kazerun.",
+        "sparql": "\"SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement_0.\n      ?statement_0 psv:P570 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P570_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_0 < \"+1965-00-00T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A died before 1979, then A could not have fought in Iran-Iraq war.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement_0.\n      ?statement_0 psv:P570 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P570_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_0 < \"+1993-00-00T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A died before 1938, then A could not have fought in World War II.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement_0.\n      ?statement_0 psv:P570 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P570_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_0 < \"+1979-00-00T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A died before 1913, then A could not have fought in World War I.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P570 ?statement_0.\n      ?statement_0 psv:P570 ?statementValue_0.\n      ?statementValue_0 wikibase:timePrecision ?precision_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_0 >= 9 )\n      ?statementValue_0 wikibase:timeValue ?P570_0.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_0 < \"+1938-00-00T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q211.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has major depressive disorder, then it is likely for person A to visit a psychologist.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1050 ?statement0.\n      ?statement0 (ps:P1050/(wdt:P279*)) wd:Q42844.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has asthma, then person A suffers from a long-lasting medical condition.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1050 ?statement0.\n      ?statement0 (ps:P1050/(wdt:P279*)) wd:Q35869.\n    }\n    LIMIT 100\n  }\n}\n"
+    },
+    {
+        "rule": "If person A has bipolar disorder, then it is likely for person A to visit a psychologist.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1050 ?statement0.\n      ?statement0 (ps:P1050/(wdt:P279*)) wd:Q131755.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has diabetes, then person A suffers from a long-lasting medical condition.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1050 ?statement0.\n      ?statement0 (ps:P1050/(wdt:P279*)) wd:Q12206.\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q38.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement2.\n        ?statement2 (ps:P27/(wdt:P279*)) wd:Q17.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement3.\n        ?statement3 (ps:P27/(wdt:P279*)) wd:Q183.\n      }\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has bipolar disorder, then person A was not mentally healthy.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1050 ?statement0.\n      ?statement0 (ps:P1050/(wdt:P279*)) wd:Q131755.\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q38.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement2.\n        ?statement2 (ps:P27/(wdt:P279*)) wd:Q17.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement3.\n        ?statement3 (ps:P27/(wdt:P279*)) wd:Q183.\n      }\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has arterial hypertension, then person A suffers from a long-lasting medical condition.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1050 ?statement0.\n      ?statement0 (ps:P1050/(wdt:P279*)) wd:Q41861.\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q38.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement2.\n        ?statement2 (ps:P27/(wdt:P279*)) wd:Q17.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement3.\n        ?statement3 (ps:P27/(wdt:P279*)) wd:Q183.\n      }\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has bipolar disorder, then person A suffers from a long-lasting medical condition.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1050 ?statement0.\n      ?statement0 (ps:P1050/(wdt:P279*)) wd:Q131755.\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q38.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement2.\n        ?statement2 (ps:P27/(wdt:P279*)) wd:Q17.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement3.\n        ?statement3 (ps:P27/(wdt:P279*)) wd:Q183.\n      }\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has rheumatoid arthritis, then person A suffers from a long-lasting medical condition.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1050 ?statement0.\n      ?statement0 (ps:P1050/(wdt:P279*)) wd:Q187255.\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q38.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement2.\n        ?statement2 (ps:P27/(wdt:P279*)) wd:Q17.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement3.\n        ?statement3 (ps:P27/(wdt:P279*)) wd:Q183.\n      }\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has epilepsy, then person A suffers from a long-lasting medical condition.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1050 ?statement0.\n      ?statement0 (ps:P1050/(wdt:P279*)) wd:Q41571.\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q38.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement2.\n        ?statement2 (ps:P27/(wdt:P279*)) wd:Q17.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement3.\n        ?statement3 (ps:P27/(wdt:P279*)) wd:Q183.\n      }\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has Down syndrome, then A had a medical condition that was present at birth.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1050 ?statement0.\n      ?statement0 (ps:P1050/(wdt:P279*)) wd:Q47715.\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q38.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement2.\n        ?statement2 (ps:P27/(wdt:P279*)) wd:Q17.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement3.\n        ?statement3 (ps:P27/(wdt:P279*)) wd:Q183.\n      }\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has medical condition of cancer, then A's cell growth rate hasn't been normal.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1050 ?statement0.\n      ?statement0 (ps:P1050/(wdt:P279*)) wd:Q12078.\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q38.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement2.\n        ?statement2 (ps:P27/(wdt:P279*)) wd:Q17.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement3.\n        ?statement3 (ps:P27/(wdt:P279*)) wd:Q183.\n      }\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has medical condition of cancer, then it is likely for person A to have visited an oncologist.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1050 ?statement0.\n      ?statement0 (ps:P1050/(wdt:P279*)) wd:Q12078.\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q38.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement2.\n        ?statement2 (ps:P27/(wdt:P279*)) wd:Q17.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement3.\n        ?statement3 (ps:P27/(wdt:P279*)) wd:Q183.\n      }\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has Alzheimer’s Disease, then A's nervous system hasn't been normal.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1050 ?statement0.\n      ?statement0 (ps:P1050/(wdt:P279*)) wd:Q11081.\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q38.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement2.\n        ?statement2 (ps:P27/(wdt:P279*)) wd:Q17.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement3.\n        ?statement3 (ps:P27/(wdt:P279*)) wd:Q183.\n      }\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has Multiple Sclerosis, then A's nervous system hasn't been normal.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1050 ?statement0.\n      ?statement0 (ps:P1050/(wdt:P279*)) wd:Q8277.\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q38.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement2.\n        ?statement2 (ps:P27/(wdt:P279*)) wd:Q17.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement3.\n        ?statement3 (ps:P27/(wdt:P279*)) wd:Q183.\n      }\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has Parkinson’s Disease, then A's nervous system hasn't been normal.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1050 ?statement0.\n      ?statement0 (ps:P1050/(wdt:P279*)) wd:Q11085.\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q38.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement2.\n        ?statement2 (ps:P27/(wdt:P279*)) wd:Q17.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement3.\n        ?statement3 (ps:P27/(wdt:P279*)) wd:Q183.\n      }\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has Amyotrophic Lateral Sclerosis, then A's nervous system hasn't been normal.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1050 ?statement0.\n      ?statement0 (ps:P1050/(wdt:P279*)) wd:Q206901.\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q38.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement2.\n        ?statement2 (ps:P27/(wdt:P279*)) wd:Q17.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement3.\n        ?statement3 (ps:P27/(wdt:P279*)) wd:Q183.\n      }\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has Addison's disease, then A's energy level is likely to be abnormal.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1050 ?statement0.\n      ?statement0 (ps:P1050/(wdt:P279*)) wd:Q8282.\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q38.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement2.\n        ?statement2 (ps:P27/(wdt:P279*)) wd:Q17.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement3.\n        ?statement3 (ps:P27/(wdt:P279*)) wd:Q183.\n      }\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has hypothyroidism, then A's energy level is likely to be abnormal.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1050 ?statement0.\n      ?statement0 (ps:P1050/(wdt:P279*)) wd:Q16501.\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q38.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement2.\n        ?statement2 (ps:P27/(wdt:P279*)) wd:Q17.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement3.\n        ?statement3 (ps:P27/(wdt:P279*)) wd:Q183.\n      }\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has psoriasis, then someone can tell A is ill by looking at the body surface.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1050 ?statement0.\n      ?statement0 (ps:P1050/(wdt:P279*)) wd:Q179945.\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q38.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement2.\n        ?statement2 (ps:P27/(wdt:P279*)) wd:Q17.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement3.\n        ?statement3 (ps:P27/(wdt:P279*)) wd:Q183.\n      }\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has Eczema, then someone can tell A is ill by looking at the body surface.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1050 ?statement0.\n      ?statement0 (ps:P1050/(wdt:P279*)) wd:Q229256.\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q38.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement2.\n        ?statement2 (ps:P27/(wdt:P279*)) wd:Q17.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement3.\n        ?statement3 (ps:P27/(wdt:P279*)) wd:Q183.\n      }\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has Vitiligo, then someone can tell A is ill by looking at the body surface.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1050 ?statement0.\n      ?statement0 (ps:P1050/(wdt:P279*)) wd:Q180152.\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q38.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement2.\n        ?statement2 (ps:P27/(wdt:P279*)) wd:Q17.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement3.\n        ?statement3 (ps:P27/(wdt:P279*)) wd:Q183.\n      }\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has Rosacea, then someone can tell A is ill by looking at the body surface.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1050 ?statement0.\n      ?statement0 (ps:P1050/(wdt:P279*)) wd:Q831530.\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q38.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement2.\n        ?statement2 (ps:P27/(wdt:P279*)) wd:Q17.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement3.\n        ?statement3 (ps:P27/(wdt:P279*)) wd:Q183.\n      }\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A died because of COVID-19, then antibiotics could not have prevented his death.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1050 ?statement0.\n      ?statement0 (ps:P1050/(wdt:P279*)) wd:Q84263196.\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q38.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement2.\n        ?statement2 (ps:P27/(wdt:P279*)) wd:Q17.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement3.\n        ?statement3 (ps:P27/(wdt:P279*)) wd:Q183.\n      }\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A died because of AIDS, then antibiotics could not have prevented his death.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1050 ?statement0.\n      ?statement0 (ps:P1050/(wdt:P279*)) wd:Q12199.\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q38.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement2.\n        ?statement2 (ps:P27/(wdt:P279*)) wd:Q17.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement3.\n        ?statement3 (ps:P27/(wdt:P279*)) wd:Q183.\n      }\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A died because of HIV, then antibiotics could not have prevented his death.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1050 ?statement0.\n      ?statement0 (ps:P1050/(wdt:P279*)) wd:Q15787.\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q38.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement2.\n        ?statement2 (ps:P27/(wdt:P279*)) wd:Q17.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement3.\n        ?statement3 (ps:P27/(wdt:P279*)) wd:Q183.\n      }\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has Alzheimer’s Disease, then A's cognitive function has been abnormal.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1050 ?statement0.\n      ?statement0 (ps:P1050/(wdt:P279*)) wd:Q11081.\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q38.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement2.\n        ?statement2 (ps:P27/(wdt:P279*)) wd:Q17.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement3.\n        ?statement3 (ps:P27/(wdt:P279*)) wd:Q183.\n      }\n    }\n    LIMIT 100\n  }\n}"
+    },
+        {
+        "rule": "If person A has the occupation of mathematician, then A must understand formal mathematics.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q1709010.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of physician, then A must have medical knowledge.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q170790.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of lawyer, then A must understand legal systems.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q40348.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of architect, then A must understand building design.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q42973.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of chemist, then A must understand chemical substances.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q593644.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of historian, then A must study past events.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q201788.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of economist, then A must understand economic systems.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q188094.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of electrician, then A must understand electrical systems.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q165029.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of mechanical engineer, then A must understand mechanical systems.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q1906857.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of software engineer, then A requires computing devices to perform work.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q1709010.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of pilot, then A requires an aircraft to perform work.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q2095549.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of surgeon, then A requires medical instruments.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q774306.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of photographer, then A requires a camera.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q33231.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of farmer, then A requires land for production.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q131512.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of miner, then A works in underground or open-pit environments.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q820037.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of construction worker, then A works at construction sites.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q811122.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of factory worker, then A works in an industrial facility.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q87285943.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of fisherman, then A requires access to bodies of water.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q331432.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of truck driver, then A requires a vehicle.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q508846.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of football player, then A requires cardiovascular fitness.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q937857.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of marathon runner, then A requires endurance.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q12803959.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of firefighter, then A requires physical strength.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q107711.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of dancer, then A requires motor coordination.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q5716684.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of pilot, then A requires sustained attention.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q2095549.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of air traffic controller, then A requires rapid decision-making.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q862632.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of surgeon, then A requires fine motor skills.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q774306.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of driver, then A requires vision.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q352388.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of musician, then A requires auditory perception.",
+        "sparql": "\nSELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q43.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q639669.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If A is a virus, then A cannot metabolize.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P31 ?statement0.\n      ?statement0 (ps:P31/(wdt:P279*)) wd:Q808.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If object A is a bacteria, then A cannot be manufactured in a factory.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P31 ?statement0.\n      ?statement0 (ps:P31/(wdt:P279*)) wd:Q10876.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If object A is a bacteria, then A cannot be printed by a 3D printer.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P31 ?statement0.\n      ?statement0 (ps:P31/(wdt:P279*)) wd:Q10876.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If A is a virus, then A cannot be grasped by a human hand.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P31 ?statement0.\n      ?statement0 (ps:P31/(wdt:P279*)) wd:Q808.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If A is a bacteria, then A cannot be grasped by a human hand.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P31 ?statement0.\n      ?statement0 (ps:P31/(wdt:P279*)) wd:Q10876.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If A is a bacteria, then A cannot be seen with a naked eye.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P31 ?statement0.\n      ?statement0 (ps:P31/(wdt:P279*)) wd:Q10876.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If A is a virus, then A cannot be seen with a naked eye.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P31 ?statement0.\n      ?statement0 (ps:P31/(wdt:P279*)) wd:Q808.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If A is a bacterium, then A cannot suffer from asthma.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P31 ?statement0.\n      ?statement0 (ps:P31/(wdt:P279*)) wd:Q10876.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A died before 1800, then A could not have made a phone call.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      {\n        ?item p:P27 ?statement0.\n        ?statement0 (ps:P27/(wdt:P279*)) wd:Q837.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q232.\n      }\n      ?item p:P570 ?statement_2.\n      ?statement_2 psv:P570 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_2 >= 9 )\n      ?statementValue_2 wikibase:timeValue ?P570_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_2 < \"+1900-00-00T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A died before 1900, then A could not have sent an email.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      {\n        ?item p:P27 ?statement0.\n        ?statement0 (ps:P27/(wdt:P279*)) wd:Q837.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q232.\n      }\n      ?item p:P570 ?statement_2.\n      ?statement_2 psv:P570 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_2 >= 9 )\n      ?statementValue_2 wikibase:timeValue ?P570_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_2 < \"+1900-00-00T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A was born before 1900, then A could not have used electric lighting during childhood.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      {\n        ?item p:P27 ?statement0.\n        ?statement0 (ps:P27/(wdt:P279*)) wd:Q837.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q232.\n      }\n      ?item p:P570 ?statement_2.\n      ?statement_2 psv:P570 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_2 >= 9 )\n      ?statementValue_2 wikibase:timeValue ?P570_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_2 < \"+1900-00-00T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A died before 1900, then A could not have listened to a radio broadcast.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      {\n        ?item p:P27 ?statement0.\n        ?statement0 (ps:P27/(wdt:P279*)) wd:Q837.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q232.\n      }\n      ?item p:P570 ?statement_2.\n      ?statement_2 psv:P570 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_2 >= 9 )\n      ?statementValue_2 wikibase:timeValue ?P570_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_2 < \"+1900-00-00T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A died before 1900, then A could not have watched television.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      {\n        ?item p:P27 ?statement0.\n        ?statement0 (ps:P27/(wdt:P279*)) wd:Q837.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q232.\n      }\n      ?item p:P570 ?statement_2.\n      ?statement_2 psv:P570 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_2 >= 9 )\n      ?statementValue_2 wikibase:timeValue ?P570_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_2 < \"+1900-00-00T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A died before 1900, then A could not have posted her opinions on facebook.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      {\n        ?item p:P27 ?statement0.\n        ?statement0 (ps:P27/(wdt:P279*)) wd:Q837.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q232.\n      }\n      ?item p:P570 ?statement_2.\n      ?statement_2 psv:P570 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_2 >= 9 )\n      ?statementValue_2 wikibase:timeValue ?P570_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_2 < \"+1900-00-00T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A was born before 1900, then A could have ridden in a car.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      {\n        ?item p:P27 ?statement0.\n        ?statement0 (ps:P27/(wdt:P279*)) wd:Q837.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q232.\n      }\n      ?item p:P570 ?statement_2.\n      ?statement_2 psv:P570 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_2 >= 9 )\n      ?statementValue_2 wikibase:timeValue ?P570_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_2 < \"+1900-00-00T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A died before 1900, then A could not have programmed software.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      {\n        ?item p:P27 ?statement0.\n        ?statement0 (ps:P27/(wdt:P279*)) wd:Q837.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q232.\n      }\n      ?item p:P570 ?statement_2.\n      ?statement_2 psv:P570 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_2 >= 9 )\n      ?statementValue_2 wikibase:timeValue ?P570_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_2 < \"+1900-00-00T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A died before 1900, then A could not have flown in an airplane.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      {\n        ?item p:P27 ?statement0.\n        ?statement0 (ps:P27/(wdt:P279*)) wd:Q837.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q232.\n      }\n      ?item p:P570 ?statement_2.\n      ?statement_2 psv:P570 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_2 >= 9 )\n      ?statementValue_2 wikibase:timeValue ?P570_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_2 < \"+1900-00-00T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a person A died before 1900, then A could not have taken photographs.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      {\n        ?item p:P27 ?statement0.\n        ?statement0 (ps:P27/(wdt:P279*)) wd:Q837.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q232.\n      }\n      ?item p:P570 ?statement_2.\n      ?statement_2 psv:P570 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_2 >= 9 )\n      ?statementValue_2 wikibase:timeValue ?P570_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_2 < \"+1900-00-00T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a device D is a computer software, then D cannot operate without an energy source.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P31 ?statement0.\n      ?statement0 (ps:P31/(wdt:P279*)) wd:Q7397.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a device D is a computer software, then D cannot operate during a blackout.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P31 ?statement0.\n      ?statement0 (ps:P31/(wdt:P279*)) wd:Q7397.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a product P is a software, then P cannot be shattered.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P31 ?statement0.\n      ?statement0 (ps:P31/(wdt:P279*)) wd:Q7397.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a product P is a software, then P cannot be broken by a hammer.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P31 ?statement0.\n      ?statement0 (ps:P31/(wdt:P279*)) wd:Q7397.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If a product P is a software, then P cannot rust.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P31 ?statement0.\n      ?statement0 (ps:P31/(wdt:P279*)) wd:Q7397.\n    }\n    LIMIT 100\n  }\n}"
+    },
+     {
+        "rule": "If person A worked in Albania, then A’s salary was paid in lek.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P39 ?statement0.\n      ?statement0 (ps:P39/(wdt:P279*)) wd:Q486839.\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q222.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A worked in Italy, then A’s salary was paid in euro.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P39 ?statement0.\n      ?statement0 (ps:P39/(wdt:P279*)) wd:Q486839.\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q38.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A worked in Aruba, then A’s income was paid in florin.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P39 ?statement0.\n      ?statement0 (ps:P39/(wdt:P279*)) wd:Q486839.\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q21203.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A worked in France, then A’s salary was paid in euro.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P39 ?statement0.\n      ?statement0 (ps:P39/(wdt:P279*)) wd:Q486839.\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q142.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A worked in Anguilla, then A’s salary was paid in dollars.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P39 ?statement0.\n      ?statement0 (ps:P39/(wdt:P279*)) wd:Q486839.\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q25228.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A worked in Comoros, then A was likely paid in franc.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P39 ?statement0.\n      ?statement0 (ps:P39/(wdt:P279*)) wd:Q486839.\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q970.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A worked in the UK, then A was likely paid in pounds sterling.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P39 ?statement0.\n      ?statement0 (ps:P39/(wdt:P279*)) wd:Q486839.\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q145.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A worked in Costa rica, then A’s salary was paid in colon.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P39 ?statement0.\n      ?statement0 (ps:P39/(wdt:P279*)) wd:Q486839.\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q800.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A worked in India, then A’s salary was paid in rupees.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P39 ?statement0.\n      ?statement0 (ps:P39/(wdt:P279*)) wd:Q486839.\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q668.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A worked in Ethiopia, then A was paid in birr.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P39 ?statement0.\n      ?statement0 (ps:P39/(wdt:P279*)) wd:Q486839.\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q115.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A worked in Canada, then A was paid in Canadian dollars.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P39 ?statement0.\n      ?statement0 (ps:P39/(wdt:P279*)) wd:Q486839.\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q16.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A worked in Russia, then A was paid in rubles.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P39 ?statement0.\n      ?statement0 (ps:P39/(wdt:P279*)) wd:Q486839.\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q159.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A worked in Mexico, then A was paid in pesos.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P39 ?statement0.\n      ?statement0 (ps:P39/(wdt:P279*)) wd:Q486839.\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q96.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A worked in Brazil, then A was paid in reais.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P39 ?statement0.\n      ?statement0 (ps:P39/(wdt:P279*)) wd:Q486839.\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q155.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A worked in Switzerland, then A was paid in Swiss francs.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P39 ?statement0.\n      ?statement0 (ps:P39/(wdt:P279*)) wd:Q486839.\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q39.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A died before 1900, then A could not have used credit cards.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      {\n        ?item p:P27 ?statement0.\n        ?statement0 (ps:P27/(wdt:P279*)) wd:Q399.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q230.\n      }\n      ?item p:P570 ?statement_2.\n      ?statement_2 psv:P570 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_2 >= 9 )\n      ?statementValue_2 wikibase:timeValue ?P570_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_2 < \"+1900-00-00T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A died before 1971, then A could not have used a microchip-based ATM.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      {\n        ?item p:P27 ?statement0.\n        ?statement0 (ps:P27/(wdt:P279*)) wd:Q399.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q230.\n      }\n      ?item p:P570 ?statement_2.\n      ?statement_2 psv:P570 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_2 >= 9 )\n      ?statementValue_2 wikibase:timeValue ?P570_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_2 < \"+1971-00-00T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A died before 1860, then A could not have used electronic stock trading.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      {\n        ?item p:P27 ?statement0.\n        ?statement0 (ps:P27/(wdt:P279*)) wd:Q399.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q230.\n      }\n      ?item p:P570 ?statement_2.\n      ?statement_2 psv:P570 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_2 >= 9 )\n      ?statementValue_2 wikibase:timeValue ?P570_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_2 < \"+1860-00-00T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A died before 1990, then A could not have used online banking.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      {\n        ?item p:P27 ?statement0.\n        ?statement0 (ps:P27/(wdt:P279*)) wd:Q399.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q230.\n      }\n      ?item p:P570 ?statement_2.\n      ?statement_2 psv:P570 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_2 >= 9 )\n      ?statementValue_2 wikibase:timeValue ?P570_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_2 < \"+1990-00-00T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A died before 1970, then A could not have used modern calculators for accounting.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      {\n        ?item p:P27 ?statement0.\n        ?statement0 (ps:P27/(wdt:P279*)) wd:Q399.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q230.\n      }\n      ?item p:P570 ?statement_2.\n      ?statement_2 psv:P570 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_2 >= 9 )\n      ?statementValue_2 wikibase:timeValue ?P570_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_2 < \"+1970-00-00T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A died before 2007, then A could not have used mobile payment apps.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      {\n        ?item p:P27 ?statement0.\n        ?statement0 (ps:P27/(wdt:P279*)) wd:Q399.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q230.\n      }\n      ?item p:P570 ?statement_2.\n      ?statement_2 psv:P570 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_2 >= 9 )\n      ?statementValue_2 wikibase:timeValue ?P570_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_2 < \"+2007-00-00T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A died before 1950, then A could not have used barcodes for inventory.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      {\n        ?item p:P27 ?statement0.\n        ?statement0 (ps:P27/(wdt:P279*)) wd:Q399.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q230.\n      }\n      ?item p:P570 ?statement_2.\n      ?statement_2 psv:P570 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_2 >= 9 )\n      ?statementValue_2 wikibase:timeValue ?P570_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_2 < \"+1950-00-00T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A died before 1980, then A could not have used personal computers in business.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      {\n        ?item p:P27 ?statement0.\n        ?statement0 (ps:P27/(wdt:P279*)) wd:Q399.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q230.\n      }\n      ?item p:P570 ?statement_2.\n      ?statement_2 psv:P570 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_2 >= 9 )\n      ?statementValue_2 wikibase:timeValue ?P570_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_2 < \"+1980-00-00T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A died before 1967, then A could not have used automated teller machines.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      {\n        ?item p:P27 ?statement0.\n        ?statement0 (ps:P27/(wdt:P279*)) wd:Q399.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q230.\n      }\n      ?item p:P570 ?statement_2.\n      ?statement_2 psv:P570 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_2 >= 9 )\n      ?statementValue_2 wikibase:timeValue ?P570_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_2 < \"+1967-00-00T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A died before 1995, then A could not have used internet stock trading.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      {\n        ?item p:P27 ?statement0.\n        ?statement0 (ps:P27/(wdt:P279*)) wd:Q399.\n      }\n      UNION\n      {\n        ?item p:P27 ?statement1.\n        ?statement1 (ps:P27/(wdt:P279*)) wd:Q230.\n      }\n      ?item p:P570 ?statement_2.\n      ?statement_2 psv:P570 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_2 >= 9 )\n      ?statementValue_2 wikibase:timeValue ?P570_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P570_2 < \"+1995-00-00T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+        {
+        "rule": "If person A was a member of a communist party, then A would favor a planned economy.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P102 ?statement0.\n      ?statement0 (ps:P102/(wdt:P279*)) wd:Q1339294.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A supported socialism, then A favored wealth redistribution policies.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P102 ?statement0.\n      ?statement0 (ps:P102/(wdt:P279*)) wd:Q1339294.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was part of a fascist regime, then A supported state-controlled corporatism.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P102 ?statement0.\n      ?statement0 (ps:P102/(wdt:P279*)) wd:Q1576143.\n    }\n    LIMIT 100\n  }\n}"
+    },
+        {
+        "rule": "If person A can speak Italian, then he can communicate with Virginia Raggi without needing a translator.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1412 ?statement0.\n      ?statement0 (ps:P1412/(wdt:P279*)) wd:Q652.\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) ?instance.\n      MINUS { ?item (p:P27/ps:P27) wd:Q38. }\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A can speak Italian, then person A would likely not suffer from language barriers at Novara.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1412 ?statement0.\n      ?statement0 (ps:P1412/(wdt:P279*)) wd:Q652.\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) ?instance.\n      MINUS { ?item (p:P27/ps:P27) wd:Q38. }\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A can speak Persian, then he can communicate with Taraneh Alidoosti without needing a translator.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1412 ?statement0.\n      ?statement0 (ps:P1412/(wdt:P279*)) wd:Q9168.\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) ?instance.\n      MINUS { ?item (p:P27/ps:P27) wd:Q794. }\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A can speak Persian, then person A would likely not suffer from language barriers at Lowshan.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1412 ?statement0.\n      ?statement0 (ps:P1412/(wdt:P279*)) wd:Q9168.\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) ?instance.\n      MINUS { ?item (p:P27/ps:P27) wd:Q794. }\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If the height of building A is greater than 40 feet, then the top of building A would be visible if you submerge it in San Luis Pass.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      BIND(\"40\"^^xsd:decimal AS ?userQuantity)\n      BIND(wd:Q3710 AS ?userUnit)\n      ?userUnit (p:P2370/psv:P2370/wikibase:quantityAmount) ?conversionFactor;\n        (p:P2370/psv:P2370/wikibase:quantityUnit) ?coherentUnit.\n      BIND(?userQuantity * ?conversionFactor AS ?coherentUserQuantity)\n      ?item p:P2048 ?statement0.\n      ?statement0 (psn:P2048/wikibase:quantityAmount) ?statementQuantity;\n        (psn:P2048/wikibase:quantityUnit) ?coherentUnit.\n      FILTER(?statementQuantity > ?coherentUserQuantity)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If the height of building A is greater than 39 metre, then the top of building A would be visible if you submerge it in Bukhta Vityaz'.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      BIND(\"40\"^^xsd:decimal AS ?userQuantity)\n      BIND(wd:Q11573 AS ?userUnit)\n      ?userUnit (p:P2370/psv:P2370/wikibase:quantityAmount) ?conversionFactor;\n        (p:P2370/psv:P2370/wikibase:quantityUnit) ?coherentUnit.\n      BIND(?userQuantity * ?conversionFactor AS ?coherentUserQuantity)\n      ?item p:P2048 ?statement0.\n      ?statement0 (psn:P2048/wikibase:quantityAmount) ?statementQuantity;\n        (psn:P2048/wikibase:quantityUnit) ?coherentUnit.\n      FILTER(?statementQuantity > ?coherentUserQuantity)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If the height of building A is greater than 70 metre, then the top of building A would be visible if you submerge it in Gulf of Suez.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      BIND(\"70\"^^xsd:decimal AS ?userQuantity)\n      BIND(wd:Q11573 AS ?userUnit)\n      ?userUnit (p:P2370/psv:P2370/wikibase:quantityAmount) ?conversionFactor;\n        (p:P2370/psv:P2370/wikibase:quantityUnit) ?coherentUnit.\n      BIND(?userQuantity * ?conversionFactor AS ?coherentUserQuantity)\n      ?item p:P2048 ?statement0.\n      ?statement0 (psn:P2048/wikibase:quantityAmount) ?statementQuantity;\n        (psn:P2048/wikibase:quantityUnit) ?coherentUnit.\n      FILTER(?statementQuantity < ?coherentUserQuantity)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If the height of building A is less than 247 metre, then the top of building A would be visible if you submerge it in Kosterfjorden.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      BIND(\"247\"^^xsd:decimal AS ?userQuantity)\n      BIND(wd:Q11573 AS ?userUnit)\n      ?userUnit (p:P2370/psv:P2370/wikibase:quantityAmount) ?conversionFactor;\n        (p:P2370/psv:P2370/wikibase:quantityUnit) ?coherentUnit.\n      BIND(?userQuantity * ?conversionFactor AS ?coherentUserQuantity)\n      ?item p:P2048 ?statement0.\n      ?statement0 (psn:P2048/wikibase:quantityAmount) ?statementQuantity;\n        (psn:P2048/wikibase:quantityUnit) ?coherentUnit.\n      FILTER(?statementQuantity < ?coherentUserQuantity)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If the height of building A is greater than 60 metre, then the top of building A would be visible if you submerge it in Étang du Diable.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      BIND(\"60\"^^xsd:decimal AS ?userQuantity)\n      BIND(wd:Q11573 AS ?userUnit)\n      ?userUnit (p:P2370/psv:P2370/wikibase:quantityAmount) ?conversionFactor;\n        (p:P2370/psv:P2370/wikibase:quantityUnit) ?coherentUnit.\n      BIND(?userQuantity * ?conversionFactor AS ?coherentUserQuantity)\n      ?item p:P2048 ?statement0.\n      ?statement0 (psn:P2048/wikibase:quantityAmount) ?statementQuantity;\n        (psn:P2048/wikibase:quantityUnit) ?coherentUnit.\n      FILTER(?statementQuantity > ?coherentUserQuantity)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If the height of building A is less than 122 metre, then the top of building A would not be visible if you submerge it in Picton Passage.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      BIND(\"122\"^^xsd:decimal AS ?userQuantity)\n      BIND(wd:Q11573 AS ?userUnit)\n      ?userUnit (p:P2370/psv:P2370/wikibase:quantityAmount) ?conversionFactor;\n        (p:P2370/psv:P2370/wikibase:quantityUnit) ?coherentUnit.\n      BIND(?userQuantity * ?conversionFactor AS ?coherentUserQuantity)\n      ?item p:P2048 ?statement0.\n      ?statement0 (psn:P2048/wikibase:quantityAmount) ?statementQuantity;\n        (psn:P2048/wikibase:quantityUnit) ?coherentUnit.\n      FILTER(?statementQuantity < ?coherentUserQuantity)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If the area of town A is greater than 7 hectars, then A cannot fit it in Estany Blanc.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      BIND(\"7\"^^xsd:decimal AS ?userQuantity)\n      BIND(wd:Q35852 AS ?userUnit)\n      ?userUnit (p:P2370/psv:P2370/wikibase:quantityAmount) ?conversionFactor;\n        (p:P2370/psv:P2370/wikibase:quantityUnit) ?coherentUnit.\n      BIND(?userQuantity * ?conversionFactor AS ?coherentUserQuantity)\n      ?item p:P2046 ?statement0.\n      ?statement0 (psn:P2046/wikibase:quantityAmount) ?statementQuantity;\n        (psn:P2046/wikibase:quantityUnit) ?coherentUnit.\n      FILTER(?statementQuantity > ?coherentUserQuantity)\n      ?item p:P31 ?statement1.\n      ?statement1 (ps:P31/(wdt:P279*)) wd:Q3957.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If the area of town A is smaller than 13000 hectars, then A can fit it in Valli di Comacchio.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      BIND(\"13000\"^^xsd:decimal AS ?userQuantity)\n      BIND(wd:Q35852 AS ?userUnit)\n      ?userUnit (p:P2370/psv:P2370/wikibase:quantityAmount) ?conversionFactor;\n        (p:P2370/psv:P2370/wikibase:quantityUnit) ?coherentUnit.\n      BIND(?userQuantity * ?conversionFactor AS ?coherentUserQuantity)\n      ?item p:P2046 ?statement0.\n      ?statement0 (psn:P2046/wikibase:quantityAmount) ?statementQuantity;\n        (psn:P2046/wikibase:quantityUnit) ?coherentUnit.\n      FILTER(?statementQuantity < ?coherentUserQuantity)\n      ?item p:P31 ?statement1.\n      ?statement1 (ps:P31/(wdt:P279*)) wd:Q3957.\n    }\n    LIMIT 100\n  }\n}"
+    },
+        {
+        "rule": "If person A comes from Iran, then it is likely for A to have tried Ash reshteh.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q794.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q81096.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A comes from Lebanon, then it is likely for A to have tried Sayadieh.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q822.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q81096.\n    }\n    LIMIT 100\n  }\n}"
+    },
+        {
+        "rule": "If person A was born in Chile, then the country of birth of person A is the same as the country where Galería Patricia Ready is located.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q298.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q81096.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was born in Chile, then the country of birth of person A is the same as the country where Catillo Thermal Baths is located.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q298.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q81096.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was born in Chile, then the country of birth of person A is the same as the country where Concha y Toro is located.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q298.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q81096.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was born in Chile, then the country of birth of person A is the same as the country where Casino Marina del Sol is located.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q298.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q81096.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was born in Bolivia, then the country of birth of person A is the same as the country where Hotel Los Tajibos is located.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q750.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q81096.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was born in Bolivia, then the country of birth of person A is the same as the country where Bolpress is from.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q750.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q81096.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was born in Bolivia, then the country of birth of person A is the same as the country where Agencia de Noticias Fides is from.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q750.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q81096.\n    }\n    LIMIT 100\n  }\n}"
+    },
+        {
+        "rule": "If enterprise A is located in Chile, then A is located in the same country as University of the Pacific.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P31 ?statement0.\n      ?statement0 (ps:P31/(wdt:P279*)) wd:Q4830453.\n      ?item p:P17 ?statement1.\n      ?statement1 (ps:P17/(wdt:P279*)) wd:Q298.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If enterprise A is located in Chile, then A is located in the same country as Diego Portales University.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P31 ?statement0.\n      ?statement0 (ps:P31/(wdt:P279*)) wd:Q4830453.\n      ?item p:P17 ?statement1.\n      ?statement1 (ps:P17/(wdt:P279*)) wd:Q298.\n    }\n    LIMIT 100\n  }\n}"
+    },
+        {
+        "rule": "If person A was born in Concepción, then he died in the same administrative territorial entity as the University of Concepción.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P19 ?statement0.\n      ?statement0 (ps:P19/(wdt:P279*)) wd:Q1880.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A died in Concepción, then he died in the same administrative territorial entity as the University of Concepción.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P20 ?statement0.\n      ?statement0 (ps:P20/(wdt:P279*)) wd:Q1880.\n    }\n    LIMIT 100\n  }\n}"
+    },
+        {
+        "rule": "If person A was a citizen of Bolivia, then he couldn't have voted for Gabriel Boric.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q750.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was a citizen of Argentina, then he couldn't have voted for Gabriel Boric.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q414.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was a citizen of Spain, then he couldn't have voted for Gabriel Boric.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q29.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was a citizen of Ecuador, then he couldn't have voted for Gabriel Boric.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q736.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was a citizen of Colombia, then he couldn't have voted for Gabriel Boric.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q739.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was a citizen of Mexico, then he couldn't have voted for Gabriel Boric.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q96.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was a citizen of Bolivia, then he couldn't have voted for Javier Milei.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q750.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was a citizen of Argentina, then he couldn't have voted for Javier Milei.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q414.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was a citizen of Spain, then he couldn't have voted for Javier Milei.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q29.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was a citizen of Ecuador, then he couldn't have voted for Javier Milei.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q736.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was a citizen of Colombia, then he couldn't have voted for Javier Milei.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q739.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was a citizen of Mexico, then he couldn't have voted for Javier Milei.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q96.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was a citizen of North korea, then he couldn't have voted for Kim Dae Jung.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q423.\n    }\n    LIMIT 100\n  }\n}"
+    },
+        {
+        "rule": "If person A was a citizen of south korea and born after 1980, then he couldn't have voted for Kim Dae Jung.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q884.\n      ?item p:P569 ?statement_1.\n      ?statement_1 psv:P569 ?statementValue_1.\n      ?statementValue_1 wikibase:timePrecision ?precision_1.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_1 >= 9 )\n      ?statementValue_1 wikibase:timeValue ?P569_1.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P569_1 >= \"+1981-00-00T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+        {
+        "rule": "If person A has the occupation of university professor, then person A would need a college degree.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q884.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q1622272.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of school teacher, then person A would have completed formal education beyond secondary school.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q884.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q2251335.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of biologist, then person A would likely know about Adenoviridae.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q884.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q864503.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of physicist, then person A would likely know Newton’s laws of motion.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q884.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q169470.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of mathematician, then person A would be familiar with algebra.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q884.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q170790.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of chemist, then person A would likely know the periodic table.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q884.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q593644.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of historian, then person A would likely study past events.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q884.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q201788.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of economist, then person A would likely know basic economic theory.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q884.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q188094.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of engineer, then person A would have studied mathematics.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q884.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q81096.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of medical doctor, then person A completed medical school.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q884.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q39631.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A has the occupation of lawyer, then person A completed legal education.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q884.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q40348.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A earned a PhD, then person A completed postgraduate education.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q884.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q39631.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A earned a master’s degree, then person A completed undergraduate education.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q884.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q39631.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A earned a bachelor’s degree, then person A completed secondary education.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q884.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q39631.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was enrolled at a university, then person A pursued higher education.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q884.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q39631.\n    }\n    LIMIT 100\n  }\n}"
+    },
+        {
+        "rule": "If person A was born between January and March, then people in Gijduvan would likely be wearing jackets on his birthday.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q794.\n      ?item p:P569 ?statement_1.\n      ?statement_1 psv:P569 ?statementValue_1.\n      ?statementValue_1 wikibase:timePrecision ?precision_1.\n      FILTER(?precision_1 >= 11 )\n      ?statementValue_1 wikibase:timeValue ?P569_1.\n      FILTER(?P569_1 > \"+1979-01-01T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P569 ?statement_2.\n      ?statement_2 psv:P569 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      FILTER(?precision_2 >= 11 )\n      ?statementValue_2 wikibase:timeValue ?P569_2.\n      FILTER(?P569_2 < \"+1979-03-30T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was born between January and March, then people in Shimbay would likely be wearing jackets on his birthday.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q794.\n      ?item p:P569 ?statement_1.\n      ?statement_1 psv:P569 ?statementValue_1.\n      ?statementValue_1 wikibase:timePrecision ?precision_1.\n      FILTER(?precision_1 >= 11 )\n      ?statementValue_1 wikibase:timeValue ?P569_1.\n      FILTER(?P569_1 > \"+1979-01-01T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P569 ?statement_2.\n      ?statement_2 psv:P569 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      FILTER(?precision_2 >= 11 )\n      ?statementValue_2 wikibase:timeValue ?P569_2.\n      FILTER(?P569_2 < \"+1979-03-30T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was born between January and March, then people in Kungrad would likely be wearing jackets on his birthday.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q794.\n      ?item p:P569 ?statement_1.\n      ?statement_1 psv:P569 ?statementValue_1.\n      ?statementValue_1 wikibase:timePrecision ?precision_1.\n      FILTER(?precision_1 >= 11 )\n      ?statementValue_1 wikibase:timeValue ?P569_1.\n      FILTER(?P569_1 > \"+1979-01-01T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P569 ?statement_2.\n      ?statement_2 psv:P569 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      FILTER(?precision_2 >= 11 )\n      ?statementValue_2 wikibase:timeValue ?P569_2.\n      FILTER(?P569_2 < \"+1979-03-30T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was born between January and March, then people in Xojeli would likely be wearing jackets on his birthday.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q794.\n      ?item p:P569 ?statement_1.\n      ?statement_1 psv:P569 ?statementValue_1.\n      ?statementValue_1 wikibase:timePrecision ?precision_1.\n      FILTER(?precision_1 >= 11 )\n      ?statementValue_1 wikibase:timeValue ?P569_1.\n      FILTER(?P569_1 > \"+1979-01-01T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P569 ?statement_2.\n      ?statement_2 psv:P569 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      FILTER(?precision_2 >= 11 )\n      ?statementValue_2 wikibase:timeValue ?P569_2.\n      FILTER(?P569_2 < \"+1979-03-30T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was born between January and March, then people in Yangibozor would likely be wearing jackets on his birthday.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q794.\n      ?item p:P569 ?statement_1.\n      ?statement_1 psv:P569 ?statementValue_1.\n      ?statementValue_1 wikibase:timePrecision ?precision_1.\n      FILTER(?precision_1 >= 11 )\n      ?statementValue_1 wikibase:timeValue ?P569_1.\n      FILTER(?P569_1 > \"+1979-01-01T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P569 ?statement_2.\n      ?statement_2 psv:P569 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      FILTER(?precision_2 >= 11 )\n      ?statementValue_2 wikibase:timeValue ?P569_2.\n      FILTER(?P569_2 < \"+1979-03-30T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was born between January and March, then people in Xonqa would likely be wearing jackets on his birthday.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q794.\n      ?item p:P569 ?statement_1.\n      ?statement_1 psv:P569 ?statementValue_1.\n      ?statementValue_1 wikibase:timePrecision ?precision_1.\n      FILTER(?precision_1 >= 11 )\n      ?statementValue_1 wikibase:timeValue ?P569_1.\n      FILTER(?P569_1 > \"+1979-01-01T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P569 ?statement_2.\n      ?statement_2 psv:P569 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      FILTER(?precision_2 >= 11 )\n      ?statementValue_2 wikibase:timeValue ?P569_2.\n      FILTER(?P569_2 < \"+1979-03-30T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was born between January and March, then people in Shumanay would likely be wearing jackets on his birthday.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q794.\n      ?item p:P569 ?statement_1.\n      ?statement_1 psv:P569 ?statementValue_1.\n      ?statementValue_1 wikibase:timePrecision ?precision_1.\n      FILTER(?precision_1 >= 11 )\n      ?statementValue_1 wikibase:timeValue ?P569_1.\n      FILTER(?P569_1 > \"+1979-01-01T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P569 ?statement_2.\n      ?statement_2 psv:P569 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      FILTER(?precision_2 >= 11 )\n      ?statementValue_2 wikibase:timeValue ?P569_2.\n      FILTER(?P569_2 < \"+1979-03-30T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was born between January and March, then people in Kegeyli would likely be wearing jackets on his birthday.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q794.\n      ?item p:P569 ?statement_1.\n      ?statement_1 psv:P569 ?statementValue_1.\n      ?statementValue_1 wikibase:timePrecision ?precision_1.\n      FILTER(?precision_1 >= 11 )\n      ?statementValue_1 wikibase:timeValue ?P569_1.\n      FILTER(?P569_1 > \"+1979-01-01T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P569 ?statement_2.\n      ?statement_2 psv:P569 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      FILTER(?precision_2 >= 11 )\n      ?statementValue_2 wikibase:timeValue ?P569_2.\n      FILTER(?P569_2 < \"+1979-03-30T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was born between January and March, then people in Kanimekh would likely be wearing jackets on his birthday.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q794.\n      ?item p:P569 ?statement_1.\n      ?statement_1 psv:P569 ?statementValue_1.\n      ?statementValue_1 wikibase:timePrecision ?precision_1.\n      FILTER(?precision_1 >= 11 )\n      ?statementValue_1 wikibase:timeValue ?P569_1.\n      FILTER(?P569_1 > \"+1979-01-01T00:00:00Z\"^^xsd:dateTime)\n      ?item p:P569 ?statement_2.\n      ?statement_2 psv:P569 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      FILTER(?precision_2 >= 11 )\n      ?statementValue_2 wikibase:timeValue ?P569_2.\n      FILTER(?P569_2 < \"+1979-03-30T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+        {
+        "rule": "If person A was a participant in 1976 Summer Olympics, then he has competed in an athletic event in the western hemisphere.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P1344 ?statement0.\n      ?statement0 (ps:P1344/(wdt:P279*)) wd:Q8444.\n    }\n    LIMIT 100\n  }\n}"
+    },
+        {
+        "rule": "If town A is in Iran, it would not be possible for an escapee from A to Saryshyganak.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P31 ?statement0.\n      ?statement0 (ps:P31/(wdt:P279*)) wd:Q3957.\n      ?item p:P17 ?statement1.\n      ?statement1 (ps:P17/(wdt:P279*)) wd:Q794.\n    }\n    LIMIT 100\n  }\n}"
+    },
+        {
+        "rule": "If person A is a girl from a Latin American country and older than 15 years, then it is likely that she celebrated a quinceañera.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P21 ?statement0.\n      ?statement0 (ps:P21/(wdt:P279*)) wd:Q6581072.\n      ?item p:P27 ?statement1.\n      ?statement1 (ps:P27/(wdt:P279*)) wd:Q739.\n      ?item p:P569 ?statement_2.\n      ?statement_2 psv:P569 ?statementValue_2.\n      ?statementValue_2 wikibase:timePrecision ?precision_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?precision_2 >= 9 )\n      ?statementValue_2 wikibase:timeValue ?P569_2.\n      hint:Prior hint:rangeSafe \"true\"^^xsd:boolean.\n      FILTER(?P569_2 < \"+2000-00-00T00:00:00Z\"^^xsd:dateTime)\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A practices Islam, then A likely observes Ramadan.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q38.\n      ?item p:P140 ?statement1.\n      ?statement1 (ps:P140/(wdt:P279*)) wd:Q432.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A practices Christianity, then A likely celebrates Christmas.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q822.\n      ?item p:P140 ?statement1.\n      ?statement1 (ps:P140/(wdt:P279*)) wd:Q5043.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A practices Judaism, then A likely observes Passover.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q38.\n      ?item p:P140 ?statement1.\n      ?statement1 (ps:P140/(wdt:P279*)) wd:Q9268.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A practices Hinduism, then A likely celebrates Diwali.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q145.\n      ?item p:P140 ?statement1.\n      ?statement1 (ps:P140/(wdt:P279*)) wd:Q9089.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A practices Buddhism, then A is likely familiar with meditation practices.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q145.\n      ?item p:P140 ?statement1.\n      ?statement1 (ps:P140/(wdt:P279*)) wd:Q748.\n    }\n    LIMIT 100\n  }\n}"
+    },
+
+    {
+        "rule": "If person A was born in China, then A is likely familiar with Lunar New Year celebrations.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q148.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q937857.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A is from Mexico, then A is likely familiar with Día de los Muertos.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q96.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q937857.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A is from Germany, then A is likely familiar with Oktoberfest.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q183.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q937857.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A is from Brazil, then A is likely familiar with Carnival.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q155.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q937857.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A is from Scotland, then A is likely familiar with traditional bagpipes.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q22.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q937857.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A is from Ireland, then A is likely familiar with St. Patrick’s Day.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q27.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q937857.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A is from Spain, then A is likely familiar with flamenco.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q29.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q937857.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A is a citizen of China, then A is likely familiar with Confucian-influenced values.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q148.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q937857.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was born in Ecuador, it would be difficult to host an ice hockey competition in his hometown.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q736.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q937857.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was born in Sudan, it would be difficult to host an ice hockey competition in his hometown.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q1049.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q937857.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A was born in Chad, it would be difficult to host an ice hockey competition in his hometown.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q657.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q937857.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A is a tennis player, then he can't do his job without a racket.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q736.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q10833314.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A is a football player, then he relies on his feet to earn income.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q657.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q937857.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A is a football player, then he knows what offside is.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q657.\n      ?item p:P106 ?statement1.\n      ?statement1 (ps:P106/(wdt:P279*)) wd:Q937857.\n    }\n    LIMIT 100\n  }\n}"
+    },
+        {
+        "rule": "If person had religion or worldview of Islam, then person A would avoid a McRib sandwich.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q38.\n      ?item p:P140 ?statement1.\n      ?statement1 (ps:P140/(wdt:P279*)) wd:Q432.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person had religion or worldview of Judaism, then person A would avoid a McRib sandwich.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q38.\n      ?item p:P140 ?statement1.\n      ?statement1 (ps:P140/(wdt:P279*)) wd:Q9268.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A believed in Islam, then person A would likely fast during Ramadan.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q38.\n      ?item p:P140 ?statement1.\n      ?statement1 (ps:P140/(wdt:P279*)) wd:Q432.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A believed in Hinduism, then person A would likely believe in reincarnation.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q38.\n      ?item p:P140 ?statement1.\n      ?statement1 (ps:P140/(wdt:P279*)) wd:Q9089.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A believed in Buddhism, then person A would not believe in a creator god in the same sense as Christianity.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q38.\n      ?item p:P140 ?statement1.\n      ?statement1 (ps:P140/(wdt:P279*)) wd:Q748.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A believed in Islam, then person A would likely avoid Vodka.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q38.\n      ?item p:P140 ?statement1.\n      ?statement1 (ps:P140/(wdt:P279*)) wd:Q432.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A believed in Islam, then person A would likely avoid coq au vin.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q38.\n      ?item p:P140 ?statement1.\n      ?statement1 (ps:P140/(wdt:P279*)) wd:Q432.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A believed in Mandaeism, then person A would likely consult Diwan Abatur for religous purposes.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q38.\n      ?item p:P140 ?statement1.\n      ?statement1 (ps:P140/(wdt:P279*)) wd:Q205754.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A believed in Islam, then person A could celebrate Eid al-Fitr.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q38.\n      ?item p:P140 ?statement1.\n      ?statement1 (ps:P140/(wdt:P279*)) wd:Q432.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A believed in Judaism, then person A could celebrate Passover.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q38.\n      ?item p:P140 ?statement1.\n      ?statement1 (ps:P140/(wdt:P279*)) wd:Q9268.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A believed in Hinduism, then person A could worship multiple deities.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q38.\n      ?item p:P140 ?statement1.\n      ?statement1 (ps:P140/(wdt:P279*)) wd:Q9089.\n    }\n    LIMIT 100\n  }\n}"
+    },
+    {
+        "rule": "If person A believed in Buddhism, then person A would not worship Hindu gods as deities.",
+        "sparql": "SELECT DISTINCT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n  {\n    SELECT DISTINCT ?item WHERE {\n      ?item p:P27 ?statement0.\n      ?statement0 (ps:P27/(wdt:P279*)) wd:Q38.\n      ?item p:P140 ?statement1.\n      ?statement1 (ps:P140/(wdt:P279*)) wd:Q748.\n    }\n    LIMIT 100\n  }\n}"
+    }
+]

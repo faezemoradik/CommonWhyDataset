@@ -1,0 +1,975 @@
+{
+    "If a person A died before 2022, then person A could not have attended El \u00daltimo Tour Del Mundo.": [
+        "TemporalReasoning",
+        "Entertainment"
+    ],
+    "If a person A was born after 27 June 1999, then person A could not have attended MJ & Friends.": [
+        "TemporalReasoning",
+        "Entertainment"
+    ],
+    "If a person A was born after 2002, then person A could not have attended El \u00daltimo Tour Del Mundo.": [
+        "TemporalReasoning",
+        "Entertainment"
+    ],
+    "If a person A died before 2 December 1946, then person A could not have been a member of International Whaling Commission.": [
+        "TemporalReasoning",
+        "Historical"
+    ],
+    "If a person A died before 1965, then person A could not have been a member of Inash Alusra.": [
+        "TemporalReasoning",
+        "Historical"
+    ],
+    "If a person A died before 2019, then person A could not have watched Ted Lasso.": [
+        "TemporalReasoning",
+        "Entertainment"
+    ],
+    "If a person A died before 2010, then person A could not have watched Yek Jahan Yek Jam.": [
+        "TemporalReasoning",
+        "Entertainment"
+    ],
+    "If a person A died before 1774, then person A could not have read The Sorrows of Young Werther.": [
+        "TemporalReasoning",
+        "Literature",
+        "Historical"
+    ],
+    "If a person A died before 1985, then person A could not have read Playing Murder.": [
+        "TemporalReasoning",
+        "Literature"
+    ],
+    "If a person A died before 1938, then person A could not have worked for Denizbank.": [
+        "TemporalReasoning",
+        "Historical"
+    ],
+    "If a person A died before 2019, then person A could not have worked for Senzoor.cz.": [
+        "TemporalReasoning",
+        "Historical"
+    ],
+    "If a person A died before 1996, then person A could not have listened to They Don't Care About Us.": [
+        "TemporalReasoning",
+        "Music"
+    ],
+    "If a person A died before 1950, then person A could not have listened to Nasime vasl.": [
+        "TemporalReasoning",
+        "Music",
+        "Historical"
+    ],
+    "If a person A died before 1955, then person A could not have been influenced by Up\u00edr Krej\u010d\u00ed.": [
+        "TemporalReasoning",
+        "Historical"
+    ],
+    "If a person A died before 1955, then person A could not have been influenced by Mojtaba Pourbakhsh.": [
+        "TemporalReasoning",
+        "Historical"
+    ],
+    "If a person A died before 1800, then A could not have spoken to someone 100 miles away.": [
+        "TemporalReasoning",
+        "Technological"
+    ],
+    "If a person A died before 1905, then A could not have supported Arminia Bielefeld.": [
+        "TemporalReasoning",
+        "Historical",
+        "Sports"
+    ],
+    "If a person A died before 1970, then A could not have supported Aboomoslem F.C.": [
+        "TemporalReasoning",
+        "Historical",
+        "Sports"
+    ],
+    "If a person A died before 1899, then A could not have supported AC Milan.": [
+        "TemporalReasoning",
+        "Historical",
+        "Sports"
+    ],
+    "If a person A died before 1923, then A could not have supported R\u012bgas FK.": [
+        "TemporalReasoning",
+        "Historical",
+        "Sports"
+    ],
+    "If person A died before 1934, then A could not have studied at University of Tehran.": [
+        "TemporalReasoning",
+        "Education",
+        "Historical"
+    ],
+    "If person A died before 1934, then A could not have studied at Farhangian University of Kazerun.": [
+        "TemporalReasoning",
+        "Education",
+        "Historical"
+    ],
+    "If person A died before 1859, then A could not have studied at Riga Technical University.": [
+        "TemporalReasoning",
+        "Historical",
+        "Education"
+    ],
+    "If person A died before 2000, then A could not have studied at Payame Noor University of Kazerun.": [
+        "TemporalReasoning",
+        "Education"
+    ],
+    "If person A died before 1965, then A could not have studied at Sharif University of Technology.": [
+        "TemporalReasoning",
+        "Education",
+        "Historical"
+    ],
+    "If person A died before 1993, then A could not have studied at Salman Farsi University of Kazerun.": [
+        "TemporalReasoning",
+        "Education",
+        "Historical"
+    ],
+    "If person A died before 1979, then A could not have fought in Iran-Iraq war.": [
+        "TemporalReasoning",
+        "Historical"
+    ],
+    "If person A died before 1938, then A could not have fought in World War II.": [
+        "TemporalReasoning",
+        "Historical"
+    ],
+    "If person A died before 1913, then A could not have fought in World War I.": [
+        "TemporalReasoning",
+        "Historical"
+    ],
+    "If person A has major depressive disorder, then it is likely for person A to visit a psychologist.": [
+        "Medical",
+        "Professions"
+    ],
+    "If person A has asthma, then person A suffers from a long-lasting medical condition.": [
+        "Biological",
+        "Medical"
+    ],
+    "If person A has bipolar disorder, then it is likely for person A to visit a psychologist.": [
+        "Medical",
+        "Professions"
+    ],
+    "If person A has diabetes, then person A suffers from a long-lasting medical condition.": [
+        "Biological",
+        "Medical"
+    ],
+    "If person A has bipolar disorder, then person A was not mentally healthy.": [
+        "Medical"
+    ],
+    "If person A has arterial hypertension, then person A suffers from a long-lasting medical condition.": [
+        "Biological",
+        "Medical"
+    ],
+    "If person A has bipolar disorder, then person A suffers from a long-lasting medical condition.": [
+        "Biological",
+        "Medical"
+    ],
+    "If person A has rheumatoid arthritis, then person A suffers from a long-lasting medical condition.": [
+        "Biological",
+        "Medical"
+    ],
+    "If person A has epilepsy, then person A suffers from a long-lasting medical condition.": [
+        "Biological",
+        "Medical"
+    ],
+    "If person A has Down syndrome, then A had a medical condition that was present at birth.": [
+        "Biological",
+        "Medical"
+    ],
+    "If person A has medical condition of cancer, then A's cell growth rate hasn't been normal.": [
+        "Biological",
+        "Medical"
+    ],
+    "If person A has medical condition of cancer, then it is likely for person A to have visited an oncologist.": [
+        "Medical",
+        "Professions"
+    ],
+    "If person A has Alzheimer\u2019s Disease, then A's nervous system hasn't been normal.": [
+        "Biological",
+        "Medical"
+    ],
+    "If person A has Multiple Sclerosis, then A's nervous system hasn't been normal.": [
+        "Biological",
+        "Medical"
+    ],
+    "If person A has Parkinson\u2019s Disease, then A's nervous system hasn't been normal.": [
+        "Biological",
+        "Medical"
+    ],
+    "If person A has Amyotrophic Lateral Sclerosis, then A's nervous system hasn't been normal.": [
+        "Biological",
+        "Medical"
+    ],
+    "If person A has Addison's disease, then A's energy level is likely to be abnormal.": [
+        "Biological",
+        "Medical"
+    ],
+    "If person A has hypothyroidism, then A's energy level is likely to be abnormal.": [
+        "Biological",
+        "Medical"
+    ],
+    "If person A has psoriasis, then someone can tell A is ill by looking at the body surface.": [
+        "Biological",
+        "Medical"
+    ],
+    "If person A has Eczema, then someone can tell A is ill by looking at the body surface.": [
+        "Biological",
+        "Medical"
+    ],
+    "If person A has Vitiligo, then someone can tell A is ill by looking at the body surface.": [
+        "Biological",
+        "Medical"
+    ],
+    "If person A has Rosacea, then someone can tell A is ill by looking at the body surface.": [
+        "Biological",
+        "Medical"
+    ],
+    "If person A died because of COVID-19, then antibiotics could not have prevented his death.": [
+        "Biological",
+        "Medical"
+    ],
+    "If person A died because of AIDS, then antibiotics could not have prevented his death.": [
+        "Biological",
+        "Medical"
+    ],
+    "If person A died because of HIV, then antibiotics could not have prevented his death.": [
+        "Biological",
+        "Medical"
+    ],
+    "If person A has Alzheimer\u2019s Disease, then A's cognitive function has been abnormal.": [
+        "Biological",
+        "Medical"
+    ],
+    "If person A has the occupation of mathematician, then A must understand formal mathematics.": [
+        "Professions",
+        "Education"
+    ],
+    "If person A has the occupation of physician, then A must have medical knowledge.": [
+        "Professions",
+        "Medical"
+    ],
+    "If person A has the occupation of lawyer, then A must understand legal systems.": [
+        "Professions",
+        "Definition"
+    ],
+    "If person A has the occupation of architect, then A must understand building design.": [
+        "Professions",
+        "Definition"
+    ],
+    "If person A has the occupation of chemist, then A must understand chemical substances.": [
+        "Professions",
+        "Definition"
+    ],
+    "If person A has the occupation of historian, then A must study past events.": [
+        "Professions",
+        "Historical"
+    ],
+    "If person A has the occupation of economist, then A must understand economic systems.": [
+        "Professions",
+        "Economic"
+    ],
+    "If person A has the occupation of electrician, then A must understand electrical systems.": [
+        "Professions",
+        "Technological"
+    ],
+    "If person A has the occupation of mechanical engineer, then A must understand mechanical systems.": [
+        "Professions",
+        "Definition"
+    ],
+    "If person A has the occupation of software engineer, then A requires computing devices to perform work.": [
+        "Technological",
+        "Professions"
+    ],
+    "If person A has the occupation of pilot, then A requires an aircraft to perform work.": [
+        "Professions",
+        "Technological"
+    ],
+    "If person A has the occupation of surgeon, then A requires medical instruments.": [
+        "Professions",
+        "Medical"
+    ],
+    "If person A has the occupation of photographer, then A requires a camera.": [
+        "Professions",
+        "Technological"
+    ],
+    "If person A has the occupation of farmer, then A requires land for production.": [
+        "Professions",
+        "Physical",
+        "Economic"
+    ],
+    "If person A has the occupation of miner, then A works in underground or open-pit environments.": [
+        "Professions",
+        "Physical"
+    ],
+    "If person A has the occupation of construction worker, then A works at construction sites.": [
+        "Professions",
+        "Physical"
+    ],
+    "If person A has the occupation of factory worker, then A works in an industrial facility.": [
+        "Professions",
+        "Definition"
+    ],
+    "If person A has the occupation of fisherman, then A requires access to bodies of water.": [
+        "Professions",
+        "Physical"
+    ],
+    "If person A has the occupation of truck driver, then A requires a vehicle.": [
+        "Professions",
+        "Physical"
+    ],
+    "If person A has the occupation of football player, then A requires cardiovascular fitness.": [
+        "Sports",
+        "Biological",
+        "Professions"
+    ],
+    "If person A has the occupation of marathon runner, then A requires endurance.": [
+        "Physical",
+        "Professions"
+    ],
+    "If person A has the occupation of firefighter, then A requires physical strength.": [
+        "Physical",
+        "Professions"
+    ],
+    "If person A has the occupation of dancer, then A requires motor coordination.": [
+        "Professions",
+        "Physical"
+    ],
+    "If person A has the occupation of pilot, then A requires sustained attention.": [
+        "Professions",
+        "Physical"
+    ],
+    "If person A has the occupation of air traffic controller, then A requires rapid decision-making.": [
+        "Professions"
+    ],
+    "If person A has the occupation of surgeon, then A requires fine motor skills.": [
+        "Biological",
+        "Professions"
+    ],
+    "If person A has the occupation of driver, then A requires vision.": [
+        "Biological",
+        "Professions"
+    ],
+    "If person A has the occupation of musician, then A requires auditory perception.": [
+        "Professions",
+        "Biological"
+    ],
+    "If A is a virus, then A cannot metabolize.": [
+        "Biological"
+    ],
+    "If object A is a bacteria, then A cannot be manufactured in a factory.": [
+        "Biological",
+        "Physical"
+    ],
+    "If object A is a bacteria, then A cannot be printed by a 3D printer.": [
+        "Biological",
+        "Technological",
+        "Physical"
+    ],
+    "If A is a virus, then A cannot be grasped by a human hand.": [
+        "Biological",
+        "Physical"
+    ],
+    "If object A is a bacteria, then object A cannot be grasped by a human hand.": [
+        "Biological",
+        "Physical"
+    ],
+    "If object A is a bacteria, then object A cannot be seen with a naked eye.": [
+        "Biological",
+        "Physical"
+    ],
+    "If object A is a virus, then object A cannot be seen with a naked eye.": [
+        "Biological",
+        "Physical"
+    ],
+    "If object A is a bacterium, then object A cannot suffer from asthma.": [
+        "Biological",
+        "Medical"
+    ],
+    "If a person A died before 1800, then A could not have made a phone call.": [
+        "TemporalReasoning",
+        "Technological",
+        "Historical"
+    ],
+    "If a person A died before 1900, then A could not have sent an email.": [
+        "TemporalReasoning",
+        "Technological"
+    ],
+    "If a person A was born before 1900, then A could not have used electric lighting during childhood.": [
+        "TemporalReasoning",
+        "Historical",
+        "Technological"
+    ],
+    "If a person A died before 1900, then A could not have listened to a radio broadcast.": [
+        "TemporalReasoning",
+        "Technological",
+        "Historical"
+    ],
+    "If a person A died before 1900, then A could not have watched television.": [
+        "TemporalReasoning",
+        "Technological",
+        "Historical"
+    ],
+    "If a person A died before 1900, then A could not have posted her opinions on facebook.": [
+        "TemporalReasoning",
+        "Technological",
+        "Historical"
+    ],
+    "If a person A was born before 1900, then A could have ridden in a car.": [
+        "TemporalReasoning",
+        "Historical",
+        "Technological"
+    ],
+    "If a person A died before 1900, then A could not have programmed software.": [
+        "TemporalReasoning",
+        "Technological",
+        "Historical"
+    ],
+    "If a person A died before 1900, then A could not have flown in an airplane.": [
+        "TemporalReasoning",
+        "Historical",
+        "Technological"
+    ],
+    "If a person A died before 1900, then A could not have taken photographs.": [
+        "TemporalReasoning",
+        "Technological",
+        "Historical"
+    ],
+    "If a device D is a computer software, then D cannot operate without an energy source.": [
+        "Technological"
+    ],
+    "If a device D is a computer software, then D cannot operate during a blackout.": [
+        "Technological",
+        "Physical"
+    ],
+    "If a product P is a software, then P cannot be shattered.": [
+        "Technological",
+        "Physical"
+    ],
+    "If a product P is a software, then P cannot be broken by a hammer.": [
+        "Physical",
+        "Technological"
+    ],
+    "If a product P is a software, then P cannot rust.": [
+        "Technological",
+        "Physical"
+    ],
+    "If person A worked in Albania, then A\u2019s salary was paid in lek.": [
+        "Geographical",
+        "Economic",
+        "Political"
+    ],
+    "If person A worked in Italy, then A\u2019s salary was paid in euro.": [
+        "Geographical",
+        "Economic"
+    ],
+    "If person A worked in Aruba, then A\u2019s income was paid in florin.": [
+        "Geographical",
+        "Economic"
+    ],
+    "If person A worked in France, then A\u2019s salary was paid in euro.": [
+        "Geographical",
+        "Economic"
+    ],
+    "If person A worked in Anguilla, then A\u2019s salary was paid in dollars.": [
+        "Geographical",
+        "Economic"
+    ],
+    "If person A worked in Comoros, then A was likely paid in franc.": [
+        "Geographical",
+        "Economic"
+    ],
+    "If person A worked in the UK, then A was likely paid in pounds sterling.": [
+        "Geographical",
+        "Economic"
+    ],
+    "If person A worked in Costa rica, then A\u2019s salary was paid in colon.": [
+        "Geographical",
+        "Economic"
+    ],
+    "If person A worked in India, then A\u2019s salary was paid in rupees.": [
+        "Geographical",
+        "Economic"
+    ],
+    "If person A worked in Ethiopia, then A was paid in birr.": [
+        "Geographical",
+        "Economic"
+    ],
+    "If person A worked in Canada, then A was paid in Canadian dollars.": [
+        "Geographical",
+        "Economic",
+        "Political"
+    ],
+    "If person A worked in Russia, then A was paid in rubles.": [
+        "Geographical",
+        "Economic",
+        "Political"
+    ],
+    "If person A worked in Mexico, then A was paid in pesos.": [
+        "Geographical",
+        "Economic",
+        "Political"
+    ],
+    "If person A worked in Brazil, then A was paid in reais.": [
+        "Geographical",
+        "Economic"
+    ],
+    "If person A worked in Switzerland, then A was paid in Swiss francs.": [
+        "Geographical",
+        "Economic"
+    ],
+    "If person A died before 1900, then A could not have used credit cards.": [
+        "TemporalReasoning",
+        "Historical",
+        "Technological"
+    ],
+    "If person A died before 1971, then A could not have used a microchip-based ATM.": [
+        "TemporalReasoning",
+        "Technological",
+        "Historical"
+    ],
+    "If person A died before 1860, then A could not have used electronic stock trading.": [
+        "TemporalReasoning",
+        "Technological",
+        "Historical"
+    ],
+    "If person A died before 1990, then A could not have used online banking.": [
+        "TemporalReasoning",
+        "Technological"
+    ],
+    "If person A died before 1970, then A could not have used modern calculators for accounting.": [
+        "TemporalReasoning",
+        "Technological"
+    ],
+    "If person A died before 2007, then A could not have used mobile payment apps.": [
+        "TemporalReasoning",
+        "Technological"
+    ],
+    "If person A died before 1950, then A could not have used barcodes for inventory.": [
+        "TemporalReasoning",
+        "Technological",
+        "Historical"
+    ],
+    "If person A died before 1980, then A could not have used personal computers in business.": [
+        "TemporalReasoning",
+        "Technological",
+        "Historical"
+    ],
+    "If person A died before 1967, then A could not have used automated teller machines.": [
+        "TemporalReasoning",
+        "Technological",
+        "Historical"
+    ],
+    "If person A died before 1995, then A could not have used internet stock trading.": [
+        "TemporalReasoning",
+        "Technological",
+        "Historical"
+    ],
+    "If person A was a member of a communist party, then A would favor a planned economy.": [
+        "Political",
+        "Economic"
+    ],
+    "If person A supported socialism, then A favored wealth redistribution policies.": [
+        "Political",
+        "Economic"
+    ],
+    "If person A was part of a fascist regime, then A supported state-controlled corporatism.": [
+        "Political",
+        "Historical"
+    ],
+    "If person A can speak Italian, then he can communicate with Virginia Raggi without needing a translator.": [
+        "Language",
+        "Political"
+    ],
+    "If person A can speak Italian, then person A would likely not suffer from language barriers at Novara.": [
+        "Geographical",
+        "Language"
+    ],
+    "If person A can speak Persian, then he can communicate with Taraneh Alidoosti without needing a translator.": [
+        "Language",
+        "Cultural"
+    ],
+    "If person A can speak Persian, then person A would likely not suffer from language barriers at Lowshan.": [
+        "Geographical",
+        "Language"
+    ],
+    "If the height of building A is greater than 40 feet, then the top of building A would be visible if you submerge it in San Luis Pass.": [
+        "Physical",
+        "Geographical"
+    ],
+    "If the height of building A is greater than 39 metre, then the top of building A would be visible if you submerge it in Bukhta Vityaz'.": [
+        "Physical",
+        "Geographical",
+        "NumberComparison"
+    ],
+    "If the height of building A is greater than 70 metre, then the top of building A would be visible if you submerge it in Gulf of Suez.": [
+        "Physical",
+        "Geographical",
+        "EntityComparison"
+    ],
+    "If the height of building A is less than 247 metre, then the top of building A would be visible if you submerge it in Kosterfjorden.": [
+        "Physical",
+        "Geographical",
+        "EntityComparison"
+    ],
+    "If the height of building A is greater than 60 metre, then the top of building A would be visible if you submerge it in \u00c9tang du Diable.": [
+        "Physical",
+        "Geographical",
+        "EntityComparison"
+    ],
+    "If the height of building A is less than 122 metre, then the top of building A would not be visible if you submerge it in Picton Passage.": [
+        "Physical",
+        "Geographical",
+        "EntityComparison"
+    ],
+    "If the area of town A is greater than 7 hectars, then A cannot fit it in Estany Blanc.": [
+        "Geographical",
+        "Physical",
+        "NumberComparison"
+    ],
+    "If the area of town A is smaller than 13000 hectars, then A can fit it in Valli di Comacchio.": [
+        "Geographical",
+        "NumberComparison",
+        "LocationComparison"
+    ],
+    "If person A comes from Iran, then it is likely for A to have tried Ash reshteh.": [
+        "Geographical",
+        "Cultural",
+        "Foods"
+    ],
+    "If person A comes from Lebanon, then it is likely for A to have tried Sayadieh.": [
+        "Geographical",
+        "Foods",
+        "Cultural"
+    ],
+    "If person A was born in Chile, then the country of birth of person A is the same as the country where Galer\u00eda Patricia Ready is located.": [
+        "Geographical"
+    ],
+    "If person A was born in Chile, then the country of birth of person A is the same as the country where Catillo Thermal Baths is located.": [
+        "Geographical"
+    ],
+    "If person A was born in Chile, then the country of birth of person A is the same as the country where Concha y Toro is located.": [
+        "Geographical"
+    ],
+    "If person A was born in Chile, then the country of birth of person A is the same as the country where Casino Marina del Sol is located.": [
+        "Geographical"
+    ],
+    "If person A was born in Bolivia, then the country of birth of person A is the same as the country where Hotel Los Tajibos is located.": [
+        "Geographical"
+    ],
+    "If person A was born in Bolivia, then the country of birth of person A is the same as the country where Bolpress is from.": [
+        "Geographical"
+    ],
+    "If person A was born in Bolivia, then the country of birth of person A is the same as the country where Agencia de Noticias Fides is from.": [
+        "Geographical"
+    ],
+    "If enterprise A is located in Chile, then A is located in the same country as University of the Pacific.": [
+        "Geographical",
+        "Education"
+    ],
+    "If enterprise A is located in Chile, then A is located in the same country as Diego Portales University.": [
+        "Geographical",
+        "Education"
+    ],
+    "If person A was born in Concepci\u00f3n, then he died in the same administrative territorial entity as the University of Concepci\u00f3n.": [
+        "Geographical",
+        "Education"
+    ],
+    "If person A died in Concepci\u00f3n, then he died in the same administrative territorial entity as the University of Concepci\u00f3n.": [
+        "Geographical",
+        "Education"
+    ],
+    "If person A was a citizen of Bolivia, then he couldn't have voted for Gabriel Boric.": [
+        "Political",
+        "Geographical"
+    ],
+    "If person A was a citizen of Argentina, then he couldn't have voted for Gabriel Boric.": [
+        "Political",
+        "Geographical"
+    ],
+    "If person A was a citizen of Spain, then he couldn't have voted for Gabriel Boric.": [
+        "Political",
+        "Geographical"
+    ],
+    "If person A was a citizen of Ecuador, then he couldn't have voted for Gabriel Boric.": [
+        "Political",
+        "Geographical"
+    ],
+    "If person A was a citizen of Colombia, then he couldn't have voted for Gabriel Boric.": [
+        "Political",
+        "Geographical"
+    ],
+    "If person A was a citizen of Mexico, then he couldn't have voted for Gabriel Boric.": [
+        "Political",
+        "Geographical"
+    ],
+    "If person A was a citizen of Bolivia, then he couldn't have voted for Javier Milei.": [
+        "Political",
+        "Geographical"
+    ],
+    "If person A was a citizen of Uruguay, then he couldn't have voted for Javier Milei.": [
+        "Political",
+        "Geographical"
+    ],
+    "If person A was a citizen of Spain, then he couldn't have voted for Javier Milei.": [
+        "Political",
+        "Geographical"
+    ],
+    "If person A was a citizen of Ecuador, then he couldn't have voted for Javier Milei.": [
+        "Political",
+        "Geographical"
+    ],
+    "If person A was a citizen of Colombia, then he couldn't have voted for Javier Milei.": [
+        "Political",
+        "Geographical"
+    ],
+    "If person A was a citizen of Mexico, then he couldn't have voted for Javier Milei.": [
+        "Political",
+        "Geographical"
+    ],
+    "If person A was a citizen of North korea, then he couldn't have voted for Kim Dae Jung.": [
+        "Political",
+        "Geographical"
+    ],
+    "If person A was a citizen of south korea and born after 1980, then he couldn't have voted for Kim Dae Jung.": [
+        "TemporalReasoning",
+        "Political",
+        "Geographical"
+    ],
+    "If person A has the occupation of university professor, then person A would need a college degree.": [
+        "Education",
+        "Professions"
+    ],
+    "If person A has the occupation of school teacher, then person A would have completed formal education beyond secondary school.": [
+        "Education",
+        "Professions"
+    ],
+    "If person A has the occupation of biologist, then person A would likely know about Adenoviridae.": [
+        "Biological",
+        "Professions"
+    ],
+    "If person A has the occupation of physicist, then person A would likely know Newton\u2019s laws of motion.": [
+        "Professions",
+        "Physical"
+    ],
+    "If person A has the occupation of mathematician, then person A would be familiar with algebra.": [
+        "Professions",
+        "Education"
+    ],
+    "If person A has the occupation of chemist, then person A would likely know the periodic table.": [
+        "Professions",
+        "Definition"
+    ],
+    "If person A has the occupation of historian, then person A would likely study past events.": [
+        "Professions",
+        "Historical"
+    ],
+    "If person A has the occupation of economist, then person A would likely know basic economic theory.": [
+        "Professions",
+        "Economic"
+    ],
+    "If person A has the occupation of engineer, then person A would have studied mathematics.": [
+        "Professions",
+        "Education"
+    ],
+    "If person A has the occupation of medical doctor, then person A completed medical school.": [
+        "Professions",
+        "Education"
+    ],
+    "If person A has the occupation of lawyer, then person A completed legal education.": [
+        "Professions",
+        "Education"
+    ],
+    "If person A earned a PhD, then person A completed postgraduate education.": [
+        "Education"
+    ],
+    "If person A earned a master\u2019s degree, then person A completed undergraduate education.": [
+        "Education"
+    ],
+    "If person A earned a bachelor\u2019s degree, then person A completed secondary education.": [
+        "Education",
+        "SetInclusion"
+    ],
+    "If person A was enrolled at a university, then person A pursued higher education.": [
+        "Education"
+    ],
+    "If person A was born between January and March, then people in Gijduvan would likely be wearing jackets on his birthday.": [
+        "TemporalReasoning",
+        "Geographical",
+        "Physical"
+    ],
+    "If person A was born between January and March, then people in Shimbay would likely be wearing jackets on his birthday.": [
+        "TemporalReasoning",
+        "Geographical",
+        "Physical"
+    ],
+    "If person A was born between January and March, then people in Kungrad would likely be wearing jackets on his birthday.": [
+        "TemporalReasoning",
+        "Geographical",
+        "Physical"
+    ],
+    "If person A was born between January and March, then people in Xojeli would likely be wearing jackets on his birthday.": [
+        "TemporalReasoning",
+        "Geographical",
+        "Physical"
+    ],
+    "If person A was born between January and March, then people in Yangibozor would likely be wearing jackets on his birthday.": [
+        "TemporalReasoning",
+        "Geographical",
+        "Physical"
+    ],
+    "If person A was born between January and March, then people in Xonqa would likely be wearing jackets on his birthday.": [
+        "TemporalReasoning",
+        "Geographical",
+        "Physical"
+    ],
+    "If person A was born between January and March, then people in Shumanay would likely be wearing jackets on his birthday.": [
+        "TemporalReasoning",
+        "Geographical",
+        "Physical"
+    ],
+    "If person A was born between January and March, then people in Kegeyli would likely be wearing jackets on his birthday.": [
+        "TemporalReasoning",
+        "Geographical",
+        "Physical"
+    ],
+    "If person A was born between January and March, then people in Kanimekh would likely be wearing jackets on his birthday.": [
+        "TemporalReasoning",
+        "Geographical",
+        "Physical"
+    ],
+    "If person A was a participant in 1976 Summer Olympics, then he has competed in an athletic event in the western hemisphere.": [
+        "TemporalReasoning",
+        "Geographical",
+        "Sports",
+        "Historical"
+    ],
+    "If town A is in Iran, it would not be possible for an escapee from A to Saryshyganak.": [
+        "Geographical",
+        "Political"
+    ],
+    "If person A is a girl from a Latin American country and older than 15 years, then it is likely that she celebrated a quincea\u00f1era.": [
+        "Cultural",
+        "Geographical",
+        "TemporalReasoning"
+    ],
+    "If person A practices Islam, then A likely observes Ramadan.": [
+        "Religous",
+        "Cultural"
+    ],
+    "If person A practices Christianity, then A likely celebrates Christmas.": [
+        "Religous",
+        "Cultural"
+    ],
+    "If person A practices Judaism, then A likely observes Passover.": [
+        "Religous",
+        "Cultural"
+    ],
+    "If person A practices Hinduism, then A likely celebrates Diwali.": [
+        "Religous",
+        "Cultural"
+    ],
+    "If person A practices Buddhism, then A is likely familiar with meditation practices.": [
+        "Religous",
+        "Cultural"
+    ],
+    "If person A was born in China, then A is likely familiar with Lunar New Year celebrations.": [
+        "Cultural",
+        "Geographical"
+    ],
+    "If person A is from Mexico, then A is likely familiar with D\u00eda de los Muertos.": [
+        "Cultural",
+        "Geographical"
+    ],
+    "If person A is from Germany, then A is likely familiar with Oktoberfest.": [
+        "Cultural",
+        "Geographical"
+    ],
+    "If person A is from Brazil, then A is likely familiar with Carnival.": [
+        "Cultural",
+        "Geographical"
+    ],
+    "If person A is from Scotland, then A is likely familiar with traditional bagpipes.": [
+        "Cultural",
+        "Geographical"
+    ],
+    "If person A is from Ireland, then A is likely familiar with St. Patrick\u2019s Day.": [
+        "Cultural",
+        "Geographical"
+    ],
+    "If person A is from Spain, then A is likely familiar with flamenco.": [
+        "Cultural",
+        "Geographical",
+        "Music"
+    ],
+    "If person A is a citizen of China, then A is likely familiar with Confucian-influenced values.": [
+        "Cultural",
+        "Geographical"
+    ],
+    "If person A was born in Ecuador, it would be difficult to host an ice hockey competition in his hometown.": [
+        "Geographical",
+        "Sports",
+        "Physical"
+    ],
+    "If person A was born in Sudan, it would be difficult to host an ice hockey competition in his hometown.": [
+        "Geographical",
+        "Sports",
+        "Physical"
+    ],
+    "If person A was born in Chad, it would be difficult to host an ice hockey competition in his hometown.": [
+        "Geographical",
+        "Sports",
+        "Physical"
+    ],
+    "If person A is a tennis player, then he can't do his job without a racket.": [
+        "Sports",
+        "Professions"
+    ],
+    "If person A is a football player, then he relies on his feet to earn income.": [
+        "Sports",
+        "Professions",
+        "Physical"
+    ],
+    "If person A is a football player, then he knows what offside is.": [
+        "Sports",
+        "Professions"
+    ],
+    "If person had religion or worldview of Islam, then person A would avoid a McRib sandwich.": [
+        "Religous",
+        "Foods",
+        "Cultural"
+    ],
+    "If person had religion or worldview of Judaism, then person A would avoid a McRib sandwich.": [
+        "Religous",
+        "Foods"
+    ],
+    "If person A believed in Islam, then person A would likely fast during Ramadan.": [
+        "Religous",
+        "Cultural"
+    ],
+    "If person A believed in Hinduism, then person A would likely believe in reincarnation.": [
+        "Religous",
+        "Cultural"
+    ],
+    "If person A believed in Buddhism, then person A would not believe in a creator god in the same sense as Christianity.": [
+        "Religous",
+        "Cultural"
+    ],
+    "If person A believed in Islam, then person A would likely avoid Vodka.": [
+        "Religous",
+        "Foods",
+        "Cultural"
+    ],
+    "If person A believed in Islam, then person A would likely avoid coq au vin.": [
+        "Religous",
+        "Foods",
+        "Cultural"
+    ],
+    "If person A believed in Mandaeism, then person A would likely consult Diwan Abatur for religous purposes.": [
+        "Religous"
+    ],
+    "If person A believed in Islam, then person A could celebrate Eid al-Fitr.": [
+        "Religous",
+        "Cultural"
+    ],
+    "If person A believed in Judaism, then person A could celebrate Passover.": [
+        "Religous",
+        "Cultural"
+    ],
+    "If person A believed in Hinduism, then person A could worship multiple deities.": [
+        "Religous",
+        "Cultural"
+    ],
+    "If person A believed in Buddhism, then person A would not worship Hindu gods as deities.": [
+        "Religous",
+        "Cultural"
+    ]
+}
