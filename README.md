@@ -19,13 +19,15 @@ The dataset is provided in `.json` format and can be loaded and viewed using sta
 In order to download the relevant KG subgarphs run Retrieve_rel_KG.py.
 
 
+CommonWhy includes different reasoning skills, illustrated [**here**](https://github.com/faezemoradik/CommonWhyDataset/blob/main/data_statistics/label_distribution_bar_plot.pdf).
+
 
 
 
 The dataset is divided into two subsets based on the popularity of the entities appearing in the questions:
 
-- **Long-tail subset**: contains half of the queries involving less popular entities.  
-- **Head subset**: contains half of the queries involving more popular entities.  
+- [**Long-tail subset**](https://github.com/faezemoradik/CommonWhyDataset/blob/main/data_files/Longtail.json): contains half of the queries involving less popular entities. 
+- [**Head subset**](https://github.com/faezemoradik/CommonWhyDataset/blob/main/data_files/Head.json): contains half of the queries involving more popular entities.  
 
 The distribution of these two subsets is illustrated [**here**](https://github.com/faezemoradik/CommonWhyDataset/blob/main/data_statistics/popularity_split_histogram.pdf).
 
@@ -35,7 +37,9 @@ The distribution of these two subsets is illustrated [**here**](https://github.c
 
 ## Data Format
 
-The format of the dataset is in JSON, where each entry contains a query (a question or a claim), the answer, anchor KG entities mentioned in the query and their respective Wikidata QID, an inference rule, relevant KG triples, reasoning steps and the relevant KG triples to each step, and finally the set of reasoning skills and strategies required to answer the query.
+The dataset is provided in JSON format. Each entry consists of a commonsense axiom as the key, while the corresponding value contains the associated questions and answers.
+Specifically, the value is itself a dictionary with multiple keys that store different pieces of information used to generate the question–answer pairs. The `"grounded_qa"` key contains a list of all question–answer pairs grounded in the given commonsense axiom.
+
 An exemplar entry of the dataset:
 ```json
 {
