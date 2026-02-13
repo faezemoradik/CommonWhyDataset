@@ -20,7 +20,7 @@ from openai import OpenAI
 # Configuration
 # -------------------------
 
-DATASET_PATH = "HeadRandomSamples.json"
+DATASET_PATH = "Head.json"
 head_or_tail = "head" if "head" in DATASET_PATH.lower() else "tail"
 
 # GEN_MODEL = "gpt-5.1"
