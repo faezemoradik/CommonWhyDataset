@@ -92,5 +92,5 @@ python baselines/evaluation.py
  
 To run the KGQA method on the dataset, use the following command.
 ```
-python -m baselines.run datafiles/ --dataset_name <QA|CV> --scoring_method <zero shot CoT|few shot CoT> --experiment_name <test> --llm_name <gpt-o1|gpt-4o|gpt-3.5-turbo|gemini|groq-llama> --mode <modified|original>
+python -m baselines.<KBBinder|KGR> datafiles/ --dataset_name commonwhy
 ```
