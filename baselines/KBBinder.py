@@ -8,6 +8,7 @@ import requests
 import argparse
 import json
 from requests.exceptions import ConnectionError
+from kbc.WDRetriever import WikidataRetriever
 import requests
 from wikidataintegrator import wdi_core
 import signal
@@ -19,7 +20,7 @@ def get_response(message):
     for i in range(tries):
         try:
             response = openai.ChatCompletion.create(
-                model = "gpt-3.5-turbo",
+                model = "gpt-5.1",
                 messages = message,
                 temperature = 0,
                 max_tokens = 300)
@@ -146,8 +147,7 @@ def log_to_csv(query_outcome, csv_file_path):
 def main():
     parser = argparse.ArgumentParser(description='Extract cooking methods from recipes.')
     parser.add_argument('path', help='Path to directory containing queries')
-    parser.add_argument('--dataset_name', type=str, help='Name of the dataset', default='StrategyQA', choices=['Recipe-MPR', 'StrategyQA', 'Creek'])
-    parser.add_argument('--mode', type=str, help='Mode of the experiment', default='modified', choices=['original', 'modified'])
+    parser.add_argument('--dataset_name', type=str, help='Name of the dataset', default='commonwhy', choices=['commonwhy', 'StrategyQA', 'Creek'])
     args = parser.parse_args()
 
 
@@ -155,22 +155,11 @@ def main():
     dataset = args.dataset_name
 
     dataset_path = os.path.join(os.getcwd() , args.path, dataset)
-    if dataset == 'Recipe-MPR':
-        #data_path = os.path.join(dataset_path, '500QA.json')
-        #with open(data_path, "r") as file:
-        #    data = json.load(file)
-        raise NotImplementedError
-    elif dataset == 'StrategyQA':
-        data_path = os.path.join(dataset_path, f'{args.dataset_name}_modified.csv')
-        with open(data_path, "r", encoding="utf-8") as file:
-            csv_reader = csv.reader(file)
-            data = list(csv_reader)
+    if dataset == 'commonwhy':
+        with open(os.path.join(dataset_path, 'inference_rule_entities_with_grounded_qa.json'), 'r', encoding="utf-8") as f:
+            data = json.load(f)
+        
 
-    answer_col_num = 3
-    if args.mode == 'original':
-        q_col_num = 1
-    elif args.mode == 'modified':
-        q_col_num = 2
 
     with open(os.path.join('prompts' , 'KBBinder_prompt.yaml'), 'r', encoding="utf-8") as yaml_file:
         yaml_str = yaml.load(yaml_file, Loader=yaml.FullLoader)
@@ -179,12 +168,12 @@ def main():
     Final_Answer_prompt_template = yaml_str['Final_Answer_prompt']
     
 
-    output_file_path = os.path.join('results', f'KBBinder_{dataset}_{args.mode}')
+    output_file_path = os.path.join('results', f'KBBinder_{dataset}')
     os.makedirs(output_file_path, exist_ok=True)
 
     query_counter = 0; unanswered_counter = 0; correct_counter = 0; 
 
-    results_file_path = os.path.join(os.getcwd(), 'results', 'KBBinder', dataset, args.mode)
+    results_file_path = os.path.join(os.getcwd(), 'results', 'KBBinder', dataset)
 
     last_answered_query = 0
     csv_file_path = os.path.join(results_file_path, 'Outcomes_Per_Query.csv')
@@ -197,118 +186,122 @@ def main():
             if last_line is not None:
                 last_answered_query = int(last_line[0])
                 print(f'Last previously-answered query: {last_answered_query}')
-
-    for i, row in tqdm.tqdm(enumerate(data[last_answered_query+1:])):
+    query_counter = last_answered_query
+    for key, value in data.items():
         conversation_history = []
 
-        if len(row) >= 4:
-            current_q_num = i+1+last_answered_query
-            query_counter += 1
-            true_answer = (row[answer_col_num]).strip().lower().startswith("true")
-            # obtaining the initial response
-            question = row[q_col_num]
-            conversation_history.append({"query ID": row[0]})
-            conversation_history.append({"question": question})
+        if key in data:
+            qa_pairs = value.get("grounded_qa", {})
+
+            for qa_pair in qa_pairs:
+                question = qa_pair.get("grounded_question")
+                true_answer = qa_pair.get("grounded_answer")
+
+                query_counter += 1
+                true_answer = value.get("true_answer")
+
+                conversation_history.append({"query ID": query_counter})
+                conversation_history.append({"question": question})
 
 
-            SPARQL_prompt = copy.deepcopy(SPARQL_prompt_template)
-            SPARQL_prompt[-1]['input3'] = SPARQL_prompt[-1]['input3'].format(QUESTION = question)
-            SPARQL_message = [{"role": "system", "content": SPARQL_prompt[0]['system']}, {"role": "user", "content":SPARQL_prompt[1]['input1']},
-                              {"role": "assistant", "content": SPARQL_prompt[2]['output1']}, {"role": "user", "content":SPARQL_prompt[3]['input2']},
-                              {"role": "assistant", "content": SPARQL_prompt[4]['output2']}, {"role": "user", "content":SPARQL_prompt[-1]['input3']}]
-            conversation_history += SPARQL_message
-            Generated_output = get_response(SPARQL_message)
-            conversation_history.append({"role": "assistant", "content": Generated_output})
+                SPARQL_prompt = copy.deepcopy(SPARQL_prompt_template)
+                SPARQL_prompt[-1]['input3'] = SPARQL_prompt[-1]['input3'].format(QUESTION = question)
+                SPARQL_message = [{"role": "system", "content": SPARQL_prompt[0]['system']}, {"role": "user", "content":SPARQL_prompt[1]['input1']},
+                                  {"role": "assistant", "content": SPARQL_prompt[2]['output1']}, {"role": "user", "content":SPARQL_prompt[3]['input2']},
+                                  {"role": "assistant", "content": SPARQL_prompt[4]['output2']}, {"role": "user", "content":SPARQL_prompt[-1]['input3']}]
+                conversation_history += SPARQL_message
+                Generated_output = get_response(SPARQL_message)
+                conversation_history.append({"role": "assistant", "content": Generated_output})
 
-            additional_knowledge = {}
+                additional_knowledge = {}
 
-            for line in Generated_output.split('\n'):
-                if line.startswith('Sub-question'):
-                    #sub_questions.append(line[(line.find(':') + 1):].strip())
-                    additional_knowledge[extract_first_number(line)] = {}
-                    additional_knowledge[extract_first_number(line)]['sub_question'] = line[(line.find(':') + 1):].strip()
-                elif line.startswith('SPARQL'):
-                    #queries.append(line[(line.find(':') + 1):].strip())
-                    additional_knowledge[extract_first_number(line)]['query'] = line[(line.find(':') + 1):].strip()
+                for line in Generated_output.split('\n'):
+                    if line.startswith('Sub-question'):
+                        #sub_questions.append(line[(line.find(':') + 1):].strip())
+                        additional_knowledge[extract_first_number(line)] = {}
+                        additional_knowledge[extract_first_number(line)]['sub_question'] = line[(line.find(':') + 1):].strip()
+                    elif line.startswith('SPARQL'):
+                        #queries.append(line[(line.find(':') + 1):].strip())
+                        additional_knowledge[extract_first_number(line)]['query'] = line[(line.find(':') + 1):].strip()
 
             
 
-            #query_answers = {}
-            #query_answer_labels = {}
-            # replacing qids and pids and running queries
+                #query_answers = {}
+                #query_answer_labels = {}
+                # replacing qids and pids and running queries
 
-            for i, val in additional_knowledge.items():
-                if 'query' in val.keys():
-                    query = val['query']
+                for i, val in additional_knowledge.items():
+                    if 'query' in val.keys():
+                        query = val['query']
 
-                    modified_query = replace_entities_and_properties(query)
-                    #q_answer_labels = run_sparql(modified_query)
+                        modified_query = replace_entities_and_properties(query)
+                        #q_answer_labels = run_sparql(modified_query)
 
-                    timeout_seconds = 30
-                    signal.signal(signal.SIGALRM, handler)
-                    signal.alarm(timeout_seconds)
-                    try:
-                        q_answer_labels = run_sparql(modified_query)
-                        signal.alarm(0)
-                    except TimeoutError as e:
-                        print("timed out")
-                        q_answer_labels = ["No additional information found for this sub-question."]
+                        timeout_seconds = 30
+                        signal.signal(signal.SIGALRM, handler)
+                        signal.alarm(timeout_seconds)
+                        try:
+                            q_answer_labels = run_sparql(modified_query)
+                            signal.alarm(0)
+                        except TimeoutError as e:
+                            print("timed out")
+                            q_answer_labels = ["No additional information found for this sub-question."]
  
 
-                        # query_answers[i+1] = q_answers
-                        # query_answer_labels[i+1] = q_answer_labels
+                            # query_answers[i+1] = q_answers
+                            # query_answer_labels[i+1] = q_answer_labels
 
-                    additional_knowledge[i]['answers'] = q_answer_labels
-                else:
-                    additional_knowledge[i]['answers'] = []
+                        additional_knowledge[i]['answers'] = q_answer_labels
+                    else:
+                        additional_knowledge[i]['answers'] = []
                 
             
 
-            # obtaining final answer
-            Final_Answer_prompt = copy.deepcopy(Final_Answer_prompt_template)
+                # obtaining final answer
+                Final_Answer_prompt = copy.deepcopy(Final_Answer_prompt_template)
             
-            sub_questions_string = """"""
+                sub_questions_string = """"""
 
-            for i, value in additional_knowledge.items():
-                ans = additional_knowledge[i]['answers']
-                if len(ans) == 0:
-                    ans_string = "No results found for this sub-question."
-                else:
-                    ans_string = str(ans)
+                for i, value in additional_knowledge.items():
+                    ans = additional_knowledge[i]['answers']
+                    if len(ans) == 0:
+                        ans_string = "No results found for this sub-question."
+                    else:
+                        ans_string = str(ans)
 
-                sub_questions_string += f"Sub-question {i}: " + value['sub_question'] + " Answer: " + ans_string + "\n"
+                    sub_questions_string += f"Sub-question {i}: " + value['sub_question'] + " Answer: " + ans_string + "\n"
             
-            Final_Answer_prompt[-1]['input3'] = Final_Answer_prompt[-1]['input3'].format(QUESTION = question, SUBQUESTIONS = sub_questions_string)
+                Final_Answer_prompt[-1]['input3'] = Final_Answer_prompt[-1]['input3'].format(QUESTION = question, SUBQUESTIONS = sub_questions_string)
 
-            Final_Answer_message = [{"role": "system", "content": Final_Answer_prompt[0]['system']}, {"role": "user", "content":Final_Answer_prompt[1]['input1']},
+                Final_Answer_message = [{"role": "system", "content": Final_Answer_prompt[0]['system']}, {"role": "user", "content":Final_Answer_prompt[1]['input1']},
                                     {"role": "assistant", "content":Final_Answer_prompt[2]['output1']}, {"role": "user", "content":Final_Answer_prompt[3]['input2']},
                                     {"role": "assistant", "content":Final_Answer_prompt[4]['output2']}, {"role": "user", "content":Final_Answer_prompt[-1]['input3']}]
 
-            conversation_history += Final_Answer_message
-            Generated_Answer = get_response(Final_Answer_message)
-            conversation_history.append({"role": "assistant", "content": Generated_Answer})
-            Final_Answer = Generated_Answer[Generated_Answer.find(':') + 1:]
-            answered = not(Final_Answer.strip().lower().startswith("i don't know"))
+                conversation_history += Final_Answer_message
+                Generated_Answer = get_response(Final_Answer_message)
+                conversation_history.append({"role": "assistant", "content": Generated_Answer})
+                Final_Answer = Generated_Answer[Generated_Answer.find(':') + 1:]
+                answered = not(Final_Answer.strip().lower().startswith("i don't know"))
 
-            if not answered:
-                unanswered_counter += 1
-                log_to_csv([current_q_num, "idk", true_answer], csv_file_path)
-                with open(os.path.join(output_file_path, f'conversation_history.yaml'),'a') as yaml_file_out:
-                    yaml.dump(conversation_history, yaml_file_out, sort_keys=False, default_flow_style=False)
-                continue
+                if not answered:
+                    unanswered_counter += 1
+                    log_to_csv([query_counter, "idk", true_answer], csv_file_path)
+                    with open(os.path.join(output_file_path, f'conversation_history.yaml'),'a') as yaml_file_out:
+                        yaml.dump(conversation_history, yaml_file_out, sort_keys=False, default_flow_style=False)
+                    continue
                 
-            else:
+                else:
                 
 
-                binary_final_answer = Final_Answer.strip().lower().startswith("yes")
+                    binary_final_answer = Final_Answer.strip().lower().startswith("yes")
 
-                result = (binary_final_answer == true_answer)
-                if result:
-                    correct_counter += 1
-                    log_to_csv([current_q_num, result, true_answer], csv_file_path)
+                    result = (binary_final_answer == true_answer)
+                    if result:
+                        correct_counter += 1
+                        log_to_csv([query_counter, result, true_answer], csv_file_path)
 
-                with open(os.path.join(output_file_path, f'conversation_history.yaml'),'a') as yaml_file_out:
-                    yaml.dump(conversation_history, yaml_file_out, sort_keys=False, default_flow_style=False)
+                    with open(os.path.join(output_file_path, f'conversation_history.yaml'),'a') as yaml_file_out:
+                        yaml.dump(conversation_history, yaml_file_out, sort_keys=False, default_flow_style=False)
                 
 
 

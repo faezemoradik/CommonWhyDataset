@@ -21,7 +21,7 @@ def get_response(message):
     for i in range(tries):
         try:
             response = openai.ChatCompletion.create(
-                model = "gpt-3.5-turbo",
+                model = "gpt-5.1",
                 messages = message,
                 temperature = 0,
                 max_tokens = 300)
@@ -45,8 +45,7 @@ def truncate_string_to_words(original_string, max_words):
 def main():
     parser = argparse.ArgumentParser(description='Extract cooking methods from recipes.')
     parser.add_argument('path', help='Path to directory containing queries')
-    parser.add_argument('--dataset_name', type=str, help='Name of the dataset', default='StrategyQA', choices=['Recipe-MPR', 'StrategyQA', 'Creak'])
-    parser.add_argument('--mode', type=str, help='Mode of the experiment', default='modified', choices=['original', 'modified'])
+    parser.add_argument('--dataset_name', type=str, help='Name of the dataset', default='commonwhy', choices=['commonwhy', 'StrategyQA', 'Creak'])
     args = parser.parse_args()
 
 
@@ -54,11 +53,10 @@ def main():
     dataset = args.dataset_name
 
     dataset_path = os.path.join(os.getcwd() , args.path, dataset)
-    if dataset == 'Recipe-MPR':
-        #data_path = os.path.join(dataset_path, '500QA.json')
-        #with open(data_path, "r") as file:
-        #    data = json.load(file)
-        raise NotImplementedError
+    if dataset == 'commonwhy':
+        with open(os.path.join(dataset_path, 'inference_rule_entities_with_grounded_qa.json'), 'r', encoding="utf-8") as f:
+            data = json.load(f)
+
     elif dataset == 'StrategyQA':
         data_path = os.path.join(dataset_path, f'{args.dataset_name}_modified.csv')
         with open(data_path, "r", encoding="utf-8") as file:
@@ -69,13 +67,11 @@ def main():
         with open(data_path, "r", encoding="utf-8") as file:
             csv_reader = csv.reader(file)
             data = list(csv_reader)
-    answer_col_num = 3
-    if args.mode == 'original':
-        q_col_num = 1
-    elif args.mode == 'modified':
-        q_col_num = 2
+    else:
+        raise ValueError("Invalid dataset name. Please choose from 'commonwhy', 'StrategyQA', or 'Creak'.")
 
-    if dataset == 'StrategyQA':
+
+    if dataset == 'commonwhy':
         prompts_folder = 'prompts'
     elif dataset == 'Creak':
         prompts_folder = 'prompts_Creak_rev1'
@@ -109,138 +105,140 @@ def main():
 
 
 
-    for i, row in tqdm.tqdm(enumerate(data[last_answered_query+1:])):
+    for key, value in data.items():
         conversation_history = []
-        current_q_num = i+1+last_answered_query
 
 
-        if len(row) >= 4:
-            query_counter += 1
-            true_answer = (row[answer_col_num]).strip().lower().startswith("true")
-            # obtaining the initial response
-            question = row[q_col_num]
-            conversation_history.append({"query ID": row[0]})
-            conversation_history.append({"query": question})
+        if key in data:
+            qa_pairs = value.get("grounded_qa", {})
+
+            for qa_pair in qa_pairs:
+                question = qa_pair.get("grounded_question")
+                true_answer = qa_pair.get("grounded_answer")
+                query_counter += 1
+                # obtaining the initial response
+
+                conversation_history.append({"query ID": query_counter})
+                conversation_history.append({"query": question})
 
 
-            Initial_Answer_prompt = copy.deepcopy(Initial_Answer_prompt_template)
-            Initial_Answer_prompt[-1]['input1'] = Initial_Answer_prompt[-1]['input1'].format(QUESTION = question)
-            Initial_Answer_message = [{"role": "system", "content": Initial_Answer_prompt[0]['system']}, {"role": "user", "content":Initial_Answer_prompt[1]['input1']}]
-            conversation_history += Initial_Answer_message
-            Initial_Answer = get_response(Initial_Answer_message)
-            conversation_history.append({"role": "assistant", "content": Initial_Answer})
+                Initial_Answer_prompt = copy.deepcopy(Initial_Answer_prompt_template)
+                Initial_Answer_prompt[-1]['input1'] = Initial_Answer_prompt[-1]['input1'].format(QUESTION = question)
+                Initial_Answer_message = [{"role": "system", "content": Initial_Answer_prompt[0]['system']}, {"role": "user", "content":Initial_Answer_prompt[1]['input1']}]
+                conversation_history += Initial_Answer_message
+                Initial_Answer = get_response(Initial_Answer_message)
+                conversation_history.append({"role": "assistant", "content": Initial_Answer})
             
-            answered = not(Initial_Answer.strip().lower().startswith("i don't know"))
+                answered = not(Initial_Answer.strip().lower().startswith("i don't know"))
 
-            if not answered:
-                unanswered_counter += 1
-                with open(os.path.join(output_file_path, 'conversation_history.yaml'),'a') as yaml_file_out:
-                    yaml.dump(conversation_history, yaml_file_out, sort_keys=False, default_flow_style=False)
-                continue
-                
-            else:
-                # extracting claims
-                Claim_Extraction_prompt = copy.deepcopy(Claim_Extraction_prompt_template)
-                Claim_Extraction_prompt[-1]['input3'] = Claim_Extraction_prompt[-1]['input3'].format(SENTENCE = Initial_Answer)
-            
-
-                Claim_Extraction_message = [{"role": "system", "content": Claim_Extraction_prompt[0]['system']}, {"role": "user", "content":Claim_Extraction_prompt[1]['input1']}, 
-                                            {"role": "assistant", "content": Claim_Extraction_prompt[2]['output1']}, {"role": "user", "content": Claim_Extraction_prompt[3]['input2']},
-                                              {"role": "assistant", "content": Claim_Extraction_prompt[4]['output2']},
-                                                {"role": "user", "content": Claim_Extraction_prompt[-1]['input3']}]
-                conversation_history += Claim_Extraction_message
-                claims = get_response(Claim_Extraction_message)
-                conversation_history.append({"role": "assistant", "content": claims})
-
-                claims_start_index = claims.find(':') + 1
-                claims_string = claims[claims_start_index:].strip()
-                claims_list = [re.sub(r'^\d+-\s*', '', claim.strip()) for claim in claims_string.split('/')]
-
-            
-                # retrofitting claims
-
-                verified_claims = []
-
-                for claim in claims_list:
-                    Entity_Extraction_prompt = copy.deepcopy(Entity_Extraction_prompt_template)
-                    Entity_Extraction_prompt[-1]['input3'] = Entity_Extraction_prompt[-1]['input3'].format(SENTENCE = claim)
-
-                    Entity_Extraction_message = [{"role": "system", "content": Entity_Extraction_prompt[0]['system']}, {"role": "user", "content":Entity_Extraction_prompt[1]['input1']},
-                                                {"role": "assistant", "content": Entity_Extraction_prompt[2]['output1']}, {"role": "user", "content": Entity_Extraction_prompt[3]['input2']},
-                                                {"role": "assistant", "content": Entity_Extraction_prompt[4]['output2']},
-                                                {"role": "user", "content": Entity_Extraction_prompt[-1]['input3']}]
-                    conversation_history += Entity_Extraction_message
-                    entities = get_response(Entity_Extraction_message)
-                    conversation_history.append({"role": "assistant", "content": entities})
-
-                    entities_start_index = entities.find(':') + 1
-                    entities_string = entities[entities_start_index:].strip()
-                    entities_list = [re.sub(r'^\d+-\s*', '', entity.strip()) for entity in entities_string.split('/')]
-                    relevant_facts_list = []
-
-                    for entity in entities_list:
-                        facts = WikidataRetriever.get_wikidata_facts(entity)
-                        if len(facts) == 0 or type(facts) == str:
-                            continue
-                        facts_str = str(facts)
-                        facts_str_truncated = truncate_string_to_words(facts_str, 500)
-
-                        Fact_Selection_prompt = copy.deepcopy(Fact_Selection_prompt_template)
-                        
-                        Fact_Selection_prompt[-1]['input3'] = Fact_Selection_prompt[-1]['input3'].format(CLAIM = claim, FACTS = facts_str_truncated)
-
-                        Fact_Selection_message = [{"role": "system", "content": Fact_Selection_prompt[0]['system']}, {"role": "user", "content":Fact_Selection_prompt[1]['input1']},
-                                                {"role": "assistant", "content": Fact_Selection_prompt[2]['output1']}, {"role": "user", "content": Fact_Selection_prompt[3]['input2']},
-                                                {"role": "assistant", "content": Fact_Selection_prompt[4]['output2']},
-                                                {"role": "user", "content": Fact_Selection_prompt[-1]['input3']}]
-                        conversation_history += Fact_Selection_message
-                        
-                        relevant_facts = get_response(Fact_Selection_message)
-                        conversation_history.append({"role": "assistant", "content": relevant_facts})
-                        relevant_facts_list.append(relevant_facts)
-                    
-                    #verifying the claim
-                    Claim_Verification_prompt = copy.deepcopy(Claim_Verification_prompt_template)
-                    Claim_Verification_prompt[-1]['input'] = Claim_Verification_prompt[-1]['input'].format(CLAIM = claim, FACTS = str(relevant_facts_list))
-                    Claim_Verification_message = [{"role": "system", "content": Claim_Verification_prompt[0]['system']}, {"role": "user", "content":Claim_Verification_prompt[1]['input']}]
-                    conversation_history += Claim_Verification_message
-                    
-                    verified_claim = get_response(Claim_Verification_message)
-                    conversation_history.append({"role": "assistant", "content": verified_claim})
-                    verified_claims.append(verified_claim)
-                
-                # generating the final answer
-                Final_Answer_prompt = copy.deepcopy(Final_Answer_prompt_template)
-                Final_Answer_prompt[-1]['input'] = Final_Answer_prompt[-1]['input'].format(QUESTION = question , CLAIMS = str(verified_claims))
-                Final_Answer_message = [{"role": "system", "content": Final_Answer_prompt[0]['system']}, {"role": "user", "content":Final_Answer_prompt[1]['input']}]
-                conversation_history += Final_Answer_message
-                
-                final_answer = get_response(Final_Answer_message)
-                conversation_history.append({"role": "assistant", "content": final_answer})
-
-                if not (final_answer.strip().lower().startswith("yes") or final_answer.strip().lower().startswith("no")):
+                if not answered:
                     unanswered_counter += 1
-                    log_to_csv([current_q_num, 'idk', true_answer], csv_file_path)
                     with open(os.path.join(output_file_path, 'conversation_history.yaml'),'a') as yaml_file_out:
                         yaml.dump(conversation_history, yaml_file_out, sort_keys=False, default_flow_style=False)
                     continue
+                
+                else:
+                    # extracting claims
+                    Claim_Extraction_prompt = copy.deepcopy(Claim_Extraction_prompt_template)
+                    Claim_Extraction_prompt[-1]['input3'] = Claim_Extraction_prompt[-1]['input3'].format(SENTENCE = Initial_Answer)
+            
 
-                binary_final_answer = final_answer.strip().lower().startswith("yes")
-                with open(os.path.join(output_file_path, 'conversation_history.yaml'),'a') as yaml_file_out:
-                    yaml.dump(conversation_history, yaml_file_out, sort_keys=False, default_flow_style=False)
+                    Claim_Extraction_message = [{"role": "system", "content": Claim_Extraction_prompt[0]['system']}, {"role": "user", "content":Claim_Extraction_prompt[1]['input1']}, 
+                                            {"role": "assistant", "content": Claim_Extraction_prompt[2]['output1']}, {"role": "user", "content": Claim_Extraction_prompt[3]['input2']},
+                                              {"role": "assistant", "content": Claim_Extraction_prompt[4]['output2']},
+                                                {"role": "user", "content": Claim_Extraction_prompt[-1]['input3']}]
+                    conversation_history += Claim_Extraction_message
+                    claims = get_response(Claim_Extraction_message)
+                    conversation_history.append({"role": "assistant", "content": claims})
+
+                    claims_start_index = claims.find(':') + 1
+                    claims_string = claims[claims_start_index:].strip()
+                    claims_list = [re.sub(r'^\d+-\s*', '', claim.strip()) for claim in claims_string.split('/')]
+
+            
+                    # retrofitting claims
+
+                    verified_claims = []
+
+                    for claim in claims_list:
+                        Entity_Extraction_prompt = copy.deepcopy(Entity_Extraction_prompt_template)
+                        Entity_Extraction_prompt[-1]['input3'] = Entity_Extraction_prompt[-1]['input3'].format(SENTENCE = claim)
+
+                        Entity_Extraction_message = [{"role": "system", "content": Entity_Extraction_prompt[0]['system']}, {"role": "user", "content":Entity_Extraction_prompt[1]['input1']},
+                                                    {"role": "assistant", "content": Entity_Extraction_prompt[2]['output1']}, {"role": "user", "content": Entity_Extraction_prompt[3]['input2']},
+                                                    {"role": "assistant", "content": Entity_Extraction_prompt[4]['output2']},
+                                                    {"role": "user", "content": Entity_Extraction_prompt[-1]['input3']}]
+                        conversation_history += Entity_Extraction_message
+                        entities = get_response(Entity_Extraction_message)
+                        conversation_history.append({"role": "assistant", "content": entities})
+
+                        entities_start_index = entities.find(':') + 1
+                        entities_string = entities[entities_start_index:].strip()
+                        entities_list = [re.sub(r'^\d+-\s*', '', entity.strip()) for entity in entities_string.split('/')]
+                        relevant_facts_list = []
+
+                        for entity in entities_list:
+                            facts = WikidataRetriever.get_wikidata_facts(entity)
+                            if len(facts) == 0 or type(facts) == str:
+                                continue
+                            facts_str = str(facts)
+                            facts_str_truncated = truncate_string_to_words(facts_str, 500)
+
+                            Fact_Selection_prompt = copy.deepcopy(Fact_Selection_prompt_template)
+                        
+                            Fact_Selection_prompt[-1]['input3'] = Fact_Selection_prompt[-1]['input3'].format(CLAIM = claim, FACTS = facts_str_truncated)
+
+                            Fact_Selection_message = [{"role": "system", "content": Fact_Selection_prompt[0]['system']}, {"role": "user", "content":Fact_Selection_prompt[1]['input1']},
+                                                {"role": "assistant", "content": Fact_Selection_prompt[2]['output1']}, {"role": "user", "content": Fact_Selection_prompt[3]['input2']},
+                                                {"role": "assistant", "content": Fact_Selection_prompt[4]['output2']},
+                                                {"role": "user", "content": Fact_Selection_prompt[-1]['input3']}]
+                            conversation_history += Fact_Selection_message
+                        
+                            relevant_facts = get_response(Fact_Selection_message)
+                            conversation_history.append({"role": "assistant", "content": relevant_facts})
+                            relevant_facts_list.append(relevant_facts)
+                    
+                        #verifying the claim
+                        Claim_Verification_prompt = copy.deepcopy(Claim_Verification_prompt_template)
+                        Claim_Verification_prompt[-1]['input'] = Claim_Verification_prompt[-1]['input'].format(CLAIM = claim, FACTS = str(relevant_facts_list))
+                        Claim_Verification_message = [{"role": "system", "content": Claim_Verification_prompt[0]['system']}, {"role": "user", "content":Claim_Verification_prompt[1]['input']}]
+                        conversation_history += Claim_Verification_message
+                    
+                        verified_claim = get_response(Claim_Verification_message)
+                        conversation_history.append({"role": "assistant", "content": verified_claim})
+                        verified_claims.append(verified_claim)
+                
+                    # generating the final answer
+                    Final_Answer_prompt = copy.deepcopy(Final_Answer_prompt_template)
+                    Final_Answer_prompt[-1]['input'] = Final_Answer_prompt[-1]['input'].format(QUESTION = question , CLAIMS = str(verified_claims))
+                    Final_Answer_message = [{"role": "system", "content": Final_Answer_prompt[0]['system']}, {"role": "user", "content":Final_Answer_prompt[1]['input']}]
+                    conversation_history += Final_Answer_message
+                
+                    final_answer = get_response(Final_Answer_message)
+                    conversation_history.append({"role": "assistant", "content": final_answer})
+
+                    if not (final_answer.strip().lower().startswith("yes") or final_answer.strip().lower().startswith("no")):
+                        unanswered_counter += 1
+                        log_to_csv([query_counter, 'idk', true_answer], csv_file_path)
+                        with open(os.path.join(output_file_path, 'conversation_history.yaml'),'a') as yaml_file_out:
+                            yaml.dump(conversation_history, yaml_file_out, sort_keys=False, default_flow_style=False)
+                        continue
+
+                    binary_final_answer = final_answer.strip().lower().startswith("yes")
+                    with open(os.path.join(output_file_path, 'conversation_history.yaml'),'a') as yaml_file_out:
+                        yaml.dump(conversation_history, yaml_file_out, sort_keys=False, default_flow_style=False)
 
 
                 
                 result = (binary_final_answer == true_answer)
                 if result:
                     correct_counter += 1
-                log_to_csv([current_q_num, binary_final_answer, true_answer], csv_file_path)
+                log_to_csv([query_counter, binary_final_answer, true_answer], csv_file_path)
                 
 
 
-
-    accuracy = correct_counter / query_counter
-    unanswered_rate = unanswered_counter / query_counter
+    accuracy = correct_counter / query_counter if query_counter > 0 else 0
+    unanswered_rate = unanswered_counter / query_counter if query_counter > 0 else 0
 
     print('accuracy:', accuracy)
     print('unanswered rate:', unanswered_rate)
