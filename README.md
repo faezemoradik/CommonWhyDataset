@@ -1,12 +1,12 @@
 # CommonWhyDataset
 
 This repository contains the resources for the paper submitted to SIGIR 2026:  
-**“\textsc{CommonWhy}: A Dataset for Evaluating Entity-Based Causal Commonsense Reasoning in Large Language Models.”**
+**“CommonWhy: A Dataset for Evaluating Entity-Based Causal Commonsense Reasoning in Large Language Models.”**
 
 
 # Introduction
 
-This repository provides the \textsc{CommonWhy} dataset and implementations of the baseline methods. \textsc{CommonWhy} consists of 15,000 *why* questions with ground-truth answers that explain the underlying cause of the event described in each question.
+This repository provides the CommonWhy dataset and implementations of the baseline methods. \textsc{CommonWhy} consists of 15,000 *why* questions with ground-truth answers that explain the underlying cause of the event described in each question.
 The dataset is designed to evaluate the capability of large language models (LLMs) in abductive, entity-based causal commonsense reasoning, as well as the commonsense reasoning ability of knowledge graph question answering (KGQA) methods.
 
 
@@ -48,7 +48,7 @@ An exemplar entry of the dataset:
         "qid": "Q1069984",
         "label": "Kārlis Skalbe"
       }, 
-       /* more fields */
+       ...
     ],
     "question": "Why couldn't person A have attended El Último Tour Del Mundo?",
     "answer": "Because person A died before 2002, while El Último Tour Del Mundo occurred in 2002.",
@@ -65,7 +65,7 @@ An exemplar entry of the dataset:
         "grounded_question": "Why couldn't Kārlis Skalbe have attended El Último Tour Del Mundo?",
         "grounded_answer": "Because Kārlis Skalbe died before 2002, while El Último Tour Del Mundo occurred in 2002."
       },  
-      /* more fields */
+      ...
     ]
 
   }
